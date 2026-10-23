@@ -13,12 +13,7 @@ Realizar Logout com Sucesso
     [Tags]    logout    login    
     Verificar homepage
     Take Screenshot   01_homepage
-    Ir Para Login
-    Take Screenshot   02_pagina_login
-    Preencher Login    ${email}    ${senha}
-    Take Screenshot   03_login_preenchido
-    Submeter Login
-    Validar Login Sucesso
+    Fazer Login    ${email}    ${senha}
     Take Screenshot   04_login_sucesso
     Realizar Logout
     Take Screenshot   05_logout_clicado

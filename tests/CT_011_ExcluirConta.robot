@@ -22,11 +22,7 @@ Criar Conta e Fazer Login
     
 
     # Fazer login com os dados criados
-    Ir Para Login
-    Preencher Login    ${email}    ${senha}
-    Take Screenshot   07_login_preenchido
-    Submeter Login
-    Validar Login Sucesso
+    Fazer Login    ${email}    ${senha}
     Take Screenshot   08_login_Valido
 
     # Excluir conta

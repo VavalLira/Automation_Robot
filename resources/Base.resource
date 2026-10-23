@@ -7,7 +7,7 @@ Resource    ./pages/LoginPage.resource
 Resource    ./keywords/Produto.resource
 Resource    ../data/variables.robot
 Resource    ./keywords/Cadastro.resource
-
+Resource    ./keywords/Login.resource
 
 
 
@@ -26,12 +26,11 @@ Abrir Navegador
     New Context    viewport=${{None}}
     
     # Abrir página
-    New Page    ${URL_BASE}
+    New Page    ${URL_BASE}    wait_until=domcontentloaded
     
     Log    Navegador aberto em tela cheia    console=true
 Verificar homepage
     Log    Verificando se chegou na homepage do Site    console=true
-    Go To    https://automationexercise.com/
     Wait For Condition    Title    matches    Início|Home|Automation Exercise    timeout=180
     Log    Homepage verificada com sucesso    console=true
 

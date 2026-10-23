@@ -1,0 +1,373 @@
+{"level":30,"time":"2026-10-23T17:42:05.738Z","pid":33316,"hostname":"AP1852551255442","msg":"Listening on 127.0.0.1:64649"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.084Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.084Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.089Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.089Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.108Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.108Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.110Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.110Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.167Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.168Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.173Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.173Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.188Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.188Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.190Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.190Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.217Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.217Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.222Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.222Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.237Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.237Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.239Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.239Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.264Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.264Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.269Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.269Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.284Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.284Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.286Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.286Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.316Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.316Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.320Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.320Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.339Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.339Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.342Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.342Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.386Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.387Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.392Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.392Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.409Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.409Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.410Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.410Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.456Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.456Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.462Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.462Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.480Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.480Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.482Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.482Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.515Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.515Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.518Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.518Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.533Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.534Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.536Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.536Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.588Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.588Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.593Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.593Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.616Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.616Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.618Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.618Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.708Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.708Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.713Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.713Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.734Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.734Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.736Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.736Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.803Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.803Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-10-23T17:42:06.809Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:06.809Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-10-23T17:42:08.034Z","pid":33316,"hostname":"AP1852551255442","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2026-10-23T17:42:08.034Z","pid":33316,"hostname":"AP1852551255442","msg":"End of node method closeAllBrowsers"}

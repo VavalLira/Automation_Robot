@@ -1,59 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.5 (Python 3.14.0 on win32)" generated="2026-10-23T11:46:45.278755" rpa="false" schemaversion="5">
+<robot generator="Robot 7.5 (Python 3.14.0 on win32)" generated="2026-10-23T14:15:46.289880" rpa="false" schemaversion="5">
 <suite id="s1" name="CT 010 CadastrarCartao" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_010_CadastrarCartao.robot">
-<test id="s1-t1" name="Adicionar Produto ao Carrinho" line="12">
+<test id="s1-t1" name="Finalizar Compra com Cartão de Teste" line="13">
 <kw name="Abrir Navegador" owner="Base" type="SETUP">
 <kw name="Resolver Executavel Chromium" owner="Base">
 <kw name="Create List" owner="BuiltIn">
+<msg time="2026-10-23T14:15:47.319469" level="INFO">${candidatos} = ['C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', 'C:/Program Fil...</msg>
 <var>${candidatos}</var>
 <arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
 <arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
 <arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
 <arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
 <doc>Creates and returns a list containing the given items.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.474673" elapsed="0.000652"/>
+<status status="PASS" start="2026-10-23T14:15:47.319077" elapsed="0.000425"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2026-10-23T14:15:47.321095" level="INFO" html="true">File '&lt;a href="file://C:\Program Files\Google\Chrome\Application\chrome.exe"&gt;C:\Program Files\Google\Chrome\Application\chrome.exe&lt;/a&gt;' exists.</msg>
 <arg>${caminho}</arg>
 <doc>Fails unless the given `path` points to an existing file.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.476982" elapsed="0.000307"/>
+<status status="PASS" start="2026-10-23T14:15:47.320727" elapsed="0.000428"/>
 </kw>
+<msg time="2026-10-23T14:15:47.321250" level="INFO">${existe} = True</msg>
 <var>${existe}</var>
 <arg>File Should Exist</arg>
 <arg>${caminho}</arg>
 <doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-10-23T11:46:46.476332" elapsed="0.001050"/>
+<status status="PASS" start="2026-10-23T14:15:47.320046" elapsed="0.001223"/>
 </kw>
 <if>
 <branch type="IF" condition="${existe}">
 <return>
 <value>${caminho}</value>
-<status status="PASS" start="2026-10-23T11:46:46.477772" elapsed="0.000171"/>
+<status status="PASS" start="2026-10-23T14:15:47.321509" elapsed="0.000142"/>
 </return>
-<status status="PASS" start="2026-10-23T11:46:46.477540" elapsed="0.000490"/>
+<status status="PASS" start="2026-10-23T14:15:47.321347" elapsed="0.000378"/>
 </branch>
-<status status="PASS" start="2026-10-23T11:46:46.477501" elapsed="0.000593"/>
+<status status="PASS" start="2026-10-23T14:15:47.321326" elapsed="0.000444"/>
 </if>
-<var name="${caminho}"/>
-<status status="PASS" start="2026-10-23T11:46:46.475939" elapsed="0.002196"/>
+<var name="${caminho}">C:/Program Files/Google/Chrome/Application/chrome.exe</var>
+<status status="PASS" start="2026-10-23T14:15:47.319844" elapsed="0.001954"/>
 </iter>
 <var>${caminho}</var>
 <value>@{candidatos}</value>
-<status status="PASS" start="2026-10-23T11:46:46.475533" elapsed="0.002667"/>
+<status status="PASS" start="2026-10-23T14:15:47.319588" elapsed="0.002253"/>
 </for>
 <return>
 <value>${EMPTY}</value>
-<status status="PASS" start="2026-10-23T11:46:46.478285" elapsed="0.000176"/>
+<status status="NOT RUN" start="2026-10-23T14:15:47.321891" elapsed="0.000106"/>
 </return>
+<msg time="2026-10-23T14:15:47.322107" level="INFO">${executavel_sistema} = C:/Program Files/Google/Chrome/Application/chrome.exe</msg>
 <var>${executavel_sistema}</var>
-<status status="PASS" start="2026-10-23T11:46:46.472861" elapsed="0.005694"/>
+<status status="PASS" start="2026-10-23T14:15:47.318149" elapsed="0.003979"/>
 </kw>
 <if>
 <branch type="IF" condition="$executavel_sistema">
 <kw name="New Browser" owner="Browser">
+<msg time="2026-10-23T14:15:47.323142" level="INFO">{"browser": "chromium", "headless": false, "args": ["--start-maximized", "--kiosk"], "chromiumSandbox": false, "devtools": false, "executablePath": "C:/Program Files/Google/Chrome/Application/chrome.exe", "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\valeria.lira.d.silva\\Documents\\Projetos\\robot_automacao\\Automation-desafio\\logs\\browser\\traces\\temp\\990fa684-d5b3-4e95-a128-889fe6198f04"}</msg>
+<msg time="2026-10-23T14:15:47.823791" level="INFO">Starting Browser process C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:61880</msg>
+<msg time="2026-10-23T14:15:50.895751" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"args":["--start-maximized","--kiosk"],"chromiumSandbox":false,"devtools":false,"executablePath":"C:/Program Files/Google/Chrome/Application/chrome.exe","handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\valeria.lira.d.silva\\Documents\\Projetos\\robot_automacao\\Automation-desafio\\logs\\browser\\traces\\temp\\990fa684-d5b3-4e95-a128-889fe6198f04"}</msg>
 <arg>chromium</arg>
 <arg>headless=False</arg>
 <arg>executablePath=${executavel_sistema}</arg>
@@ -61,9 +68,9 @@
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.479069" elapsed="0.000821"/>
+<status status="PASS" start="2026-10-23T14:15:47.322494" elapsed="3.573512"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.478681" elapsed="0.001317"/>
+<status status="PASS" start="2026-10-23T14:15:47.322190" elapsed="3.573960"/>
 </branch>
 <branch type="ELSE">
 <kw name="New Browser" owner="Browser">
@@ -73,56 +80,76 @@
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.480508" elapsed="0.000661"/>
+<status status="NOT RUN" start="2026-10-23T14:15:50.896806" elapsed="0.000509"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.480063" elapsed="0.001194"/>
+<status status="NOT RUN" start="2026-10-23T14:15:50.896243" elapsed="0.001192"/>
 </branch>
-<status status="PASS" start="2026-10-23T11:46:46.478656" elapsed="0.002655"/>
+<status status="PASS" start="2026-10-23T14:15:47.322175" elapsed="3.575318"/>
 </if>
 <kw name="Set Browser Timeout" owner="Browser">
 <arg>${TIMEOUT_PADRAO}</arg>
 <tag>Config</tag>
 <tag>Setter</tag>
 <doc>Sets the timeout used by most input and getter keywords.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.481488" elapsed="0.000547"/>
+<status status="PASS" start="2026-10-23T14:15:50.897713" elapsed="0.005000"/>
 </kw>
 <kw name="New Context" owner="Browser">
+<msg time="2026-10-23T14:15:50.905260" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": null
+}</msg>
+<msg time="2026-10-23T14:15:50.957101" level="INFO">Successfully created context. </msg>
+<msg time="2026-10-23T14:15:50.957220" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': None}</msg>
 <arg>viewport=${{None}}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new BrowserContext with specified options.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.482397" elapsed="0.000562"/>
+<status status="PASS" start="2026-10-23T14:15:50.903153" elapsed="0.054173"/>
 </kw>
 <kw name="New Page" owner="Browser">
+<msg time="2026-10-23T14:16:03.989424" level="INFO">Successfully initialized new page object and opened url: https://automationexercise.com</msg>
 <arg>${URL_BASE}</arg>
+<arg>wait_until=domcontentloaded</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.483176" elapsed="0.000557"/>
+<status status="PASS" start="2026-10-23T14:15:50.957617" elapsed="13.032088"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:03.991022" level="INFO">Navegador aberto em tela cheia</msg>
 <arg>Navegador aberto em tela cheia</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.483917" elapsed="0.000312"/>
+<status status="PASS" start="2026-10-23T14:16:03.990096" elapsed="0.001166"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.471774" elapsed="0.012523"/>
+<status status="PASS" start="2026-10-23T14:15:47.317588" elapsed="16.673835"/>
 </kw>
 <kw name="Verificar homepage" owner="Base">
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:03.992686" level="INFO">Verificando se chegou na homepage do Site</msg>
 <arg>Verificando se chegou na homepage do Site</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.485039" elapsed="0.000351"/>
-</kw>
-<kw name="Go To" owner="Browser">
-<arg>https://automationexercise.com/</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Navigates to the given ``url``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.485583" elapsed="0.000534"/>
+<status status="PASS" start="2026-10-23T14:16:03.992306" elapsed="0.000487"/>
 </kw>
 <kw name="Wait For Condition" owner="Browser">
+<kw name="Get Title" owner="Browser">
+<msg time="2026-10-23T14:16:04.004488" level="INFO">Title: 'Automation Exercise'</msg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2026-10-23T14:16:03.996671" elapsed="0.007979"/>
+</kw>
 <arg>Title</arg>
 <arg>matches</arg>
 <arg>Início|Home|Automation Exercise</arg>
@@ -130,255 +157,291 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.486289" elapsed="0.000617"/>
+<status status="PASS" start="2026-10-23T14:16:03.992995" elapsed="0.013271"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.007270" level="INFO">Homepage verificada com sucesso</msg>
 <arg>Homepage verificada com sucesso</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.487105" elapsed="0.000326"/>
+<status status="PASS" start="2026-10-23T14:16:04.006586" elapsed="0.000857"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.484624" elapsed="0.002869"/>
+<status status="PASS" start="2026-10-23T14:16:03.991788" elapsed="0.015761"/>
 </kw>
-<kw name="Ir Para Login" owner="Login">
+<kw name="Ir Para Login" owner="LoginPage">
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.008945" level="INFO">Navegando para a página de login</msg>
 <arg>Navegando para a página de login</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.488281" elapsed="0.000341"/>
+<status status="PASS" start="2026-10-23T14:16:04.008494" elapsed="0.000603"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:04.009898" level="INFO">Clicks the element 'text=Signup / Login'.</msg>
 <arg>${SELECTOR_SIGNUP_LOGIN}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.488753" elapsed="0.000378"/>
+<status status="PASS" start="2026-10-23T14:16:04.009276" elapsed="0.834293"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.844858" level="INFO">Página de login carregada</msg>
 <arg>Página de login carregada</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.489311" elapsed="0.000302"/>
+<status status="PASS" start="2026-10-23T14:16:04.843960" elapsed="0.001130"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.487839" elapsed="0.001834"/>
+<status status="PASS" start="2026-10-23T14:16:04.007889" elapsed="0.837338"/>
 </kw>
-<kw name="Criar Conta" owner="Cadastro">
+<kw name="Criar Nova Conta" owner="Cadastro">
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:04.877424" level="INFO">Waited for Element with selector xpath=//h2[contains(text(), "New User Signup!")] at state visible</msg>
 <arg>xpath=//h2[contains(text(), "New User Signup!")]</arg>
 <arg>visible</arg>
 <arg>timeout=180</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.490482" elapsed="0.000496"/>
+<status status="PASS" start="2026-10-23T14:16:04.847093" elapsed="0.030563"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.878732" level="INFO">Página de cadastro carregada com sucesso ... Iniciando preenchimento</msg>
 <arg>Página de cadastro carregada com sucesso ... Iniciando preenchimento</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.491151" elapsed="0.000290"/>
+<status status="PASS" start="2026-10-23T14:16:04.878001" elapsed="0.003977"/>
 </kw>
 <kw name="Name" owner="FakerLibrary">
+<msg time="2026-10-23T14:16:04.883195" level="INFO">${nome} = Heloisa Pereira</msg>
 <var>${nome}</var>
 <doc>:example: 'John Doe'</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.491563" elapsed="0.000140"/>
+<status status="PASS" start="2026-10-23T14:16:04.882329" elapsed="0.000924"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.884332" level="INFO">${nome} = Heloisa Pereira</msg>
 <arg>${nome}</arg>
 <doc>Makes the variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.491837" elapsed="0.000250"/>
+<status status="PASS" start="2026-10-23T14:16:04.883509" elapsed="0.000908"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.885283" level="INFO">nome gerado: Heloisa Pereira</msg>
 <arg>nome gerado: ${nome}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.492230" elapsed="0.000262"/>
+<status status="PASS" start="2026-10-23T14:16:04.884677" elapsed="0.002484"/>
 </kw>
 <kw name="Convert To Lower Case" owner="String">
+<msg time="2026-10-23T14:16:04.888243" level="INFO">${nome_lower} = heloisa pereira</msg>
 <var>${nome_lower}</var>
 <arg>${nome}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.492605" elapsed="0.000150"/>
+<status status="PASS" start="2026-10-23T14:16:04.887582" elapsed="0.000720"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.889409" level="INFO">${nome_sem_acentos} = heloisa pereira</msg>
 <var>${nome_sem_acentos}</var>
 <arg>__import__('unicodedata').normalize('NFKD', '${nome_lower}').encode('ASCII', 'ignore').decode('ASCII')</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.492908" elapsed="0.000243"/>
+<status status="PASS" start="2026-10-23T14:16:04.888550" elapsed="0.000902"/>
 </kw>
 <kw name="Convert To Lower Case" owner="String">
+<msg time="2026-10-23T14:16:04.890100" level="INFO">${nome_lower} = heloisa pereira</msg>
 <var>${nome_lower}</var>
 <arg>${nome_sem_acentos}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.493262" elapsed="0.000153"/>
+<status status="PASS" start="2026-10-23T14:16:04.889645" elapsed="0.000496"/>
 </kw>
 <kw name="Replace String" owner="String">
+<msg time="2026-10-23T14:16:04.890898" level="INFO">${nome_sem_espacos} = heloisa.pereira</msg>
 <var>${nome_sem_espacos}</var>
 <arg>${nome_lower}</arg>
 <arg>${SPACE}</arg>
 <arg>.</arg>
 <doc>Replaces `search_for` in the given `string` with `replace_with`.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.493537" elapsed="0.000175"/>
+<status status="PASS" start="2026-10-23T14:16:04.890404" elapsed="0.000536"/>
 </kw>
 <kw name="Get Time" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.891776" level="INFO">${timestamp} = 1792775764</msg>
 <var>${timestamp}</var>
 <arg>epoch</arg>
 <doc>Returns the given time in the requested format.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.493855" elapsed="0.000228"/>
+<status status="PASS" start="2026-10-23T14:16:04.891175" elapsed="0.000637"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.892517" level="INFO">${email} = heloisa.pereira1792775764@test.com</msg>
 <var>${email}</var>
 <arg>${nome_sem_espacos}${timestamp}@test.com</arg>
 <doc>Returns the given values which can then be assigned to a variable.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.494199" elapsed="0.000239"/>
+<status status="PASS" start="2026-10-23T14:16:04.891989" elapsed="0.000563"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.893337" level="INFO">${email} = heloisa.pereira1792775764@test.com</msg>
 <arg>${email}</arg>
 <doc>Makes the variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.494560" elapsed="0.000238"/>
+<status status="PASS" start="2026-10-23T14:16:04.892773" elapsed="0.000617"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.894178" level="INFO">email gerado: heloisa.pereira1792775764@test.com</msg>
 <arg>email gerado: ${email}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.494937" elapsed="0.000250"/>
+<status status="PASS" start="2026-10-23T14:16:04.893626" elapsed="0.000922"/>
 </kw>
 <kw name="Generate Random String" owner="String">
+<msg time="2026-10-23T14:16:04.895411" level="INFO">${senha} = 0ojhLtofXomT</msg>
 <var>${senha}</var>
 <arg>12</arg>
 <arg>[LETTERS][NUMBERS]</arg>
 <doc>Generates a string with a desired `length` from the given `chars`.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.495309" elapsed="0.000158"/>
+<status status="PASS" start="2026-10-23T14:16:04.894798" elapsed="0.000651"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.899024" level="INFO">${senha} = 0ojhLtofXomT</msg>
 <arg>${senha}</arg>
 <doc>Makes the variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.495600" elapsed="0.000251"/>
+<status status="PASS" start="2026-10-23T14:16:04.897586" elapsed="0.001603"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.900772" level="INFO">senha gerada: 0ojhLtofXomT</msg>
 <arg>senha gerada: ${senha}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.495992" elapsed="0.000259"/>
+<status status="PASS" start="2026-10-23T14:16:04.899627" elapsed="0.001508"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.902282" level="INFO">Iniciando criação de conta</msg>
 <arg>Iniciando criação de conta</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.496416" elapsed="0.000270"/>
+<status status="PASS" start="2026-10-23T14:16:04.901562" elapsed="0.000899"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:04.903742" level="INFO">Fills the text 'Heloisa Pereira' in the given field.</msg>
 <arg>input[data-qa="signup-name"]</arg>
 <arg>${nome}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.496807" elapsed="0.000372"/>
+<status status="PASS" start="2026-10-23T14:16:04.902803" elapsed="0.020111"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.924138" level="INFO">Campo nome preenchido com: Heloisa Pereira</msg>
 <arg>Campo nome preenchido com: ${nome}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.497358" elapsed="0.000288"/>
+<status status="PASS" start="2026-10-23T14:16:04.923266" elapsed="0.001057"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:04.925365" level="INFO">Fills the text 'heloisa.pereira1792775764@test.com' in the given field.</msg>
 <arg>input[data-qa="signup-email"]</arg>
 <arg>${email}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.497768" elapsed="0.000328"/>
+<status status="PASS" start="2026-10-23T14:16:04.924609" elapsed="0.015394"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:04.941274" level="INFO">Campo email preenchido com: heloisa.pereira1792775764@test.com</msg>
 <arg>Campo email preenchido com: ${email}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.498247" elapsed="0.000259"/>
+<status status="PASS" start="2026-10-23T14:16:04.940373" elapsed="0.001129"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:04.942669" level="INFO">Clicks the element 'button[data-qa="signup-button"]'.</msg>
 <arg>button[data-qa="signup-button"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.498642" elapsed="0.000368"/>
+<status status="PASS" start="2026-10-23T14:16:04.941841" elapsed="1.322516"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.265859" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses execution for the given time.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.499129" elapsed="0.000282"/>
+<status status="PASS" start="2026-10-23T14:16:06.264681" elapsed="2.001451"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.268531" level="INFO">Botão de cadastro clicado</msg>
 <arg>Botão de cadastro clicado</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.499556" elapsed="0.000269"/>
+<status status="PASS" start="2026-10-23T14:16:08.266720" elapsed="0.002264"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.490026" elapsed="0.009859"/>
-</kw>
-<kw name="Preencher Dados da Conta" owner="Cadastro">
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.270801" level="INFO">Iniciando preenchimento do formulario</msg>
 <arg>Iniciando preenchimento do formulario</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.500801" elapsed="0.000332"/>
+<status status="PASS" start="2026-10-23T14:16:08.269621" elapsed="0.001506"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:08.297868" level="INFO">Waited for Element with selector xpath=//h2[contains(., "Enter Account Information")] at state visible</msg>
 <arg>xpath=//h2[contains(., "Enter Account Information")]</arg>
 <arg>visible</arg>
 <arg>timeout=180</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.501342" elapsed="0.000731"/>
+<status status="PASS" start="2026-10-23T14:16:08.271652" elapsed="0.026364"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.298947" level="INFO">Formulario de criacao visivel</msg>
 <arg>Formulario de criacao visivel</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.502356" elapsed="0.000600"/>
+<status status="PASS" start="2026-10-23T14:16:08.298260" elapsed="0.000885"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:08.307196" level="INFO">Waited for Element with selector xpath=//input[@name="title" and @value="Mrs"] at state visible</msg>
 <arg>xpath=//input[@name="title" and @value="Mrs"]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.503202" elapsed="0.000656"/>
+<status status="PASS" start="2026-10-23T14:16:08.299474" elapsed="0.007946"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.308602" level="INFO">Título "Mrs" visível</msg>
 <arg>Título "Mrs" visível</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.504165" elapsed="0.000464"/>
+<status status="PASS" start="2026-10-23T14:16:08.307740" elapsed="0.001096"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:08.309933" level="INFO">Clicks the element 'input[name="title"][value="Mrs"]'.</msg>
 <arg>input[name="title"][value="Mrs"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.504844" elapsed="0.000602"/>
+<status status="PASS" start="2026-10-23T14:16:08.309133" elapsed="0.045458"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.355863" level="INFO">Título selecionado</msg>
 <arg>Título selecionado</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.505703" elapsed="0.000483"/>
+<status status="PASS" start="2026-10-23T14:16:08.354927" elapsed="0.001189"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:08.357171" level="INFO">Fills the text '0ojhLtofXomT' in the given field.</msg>
 <arg>input[data-qa="password"]</arg>
 <arg>${senha}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.506440" elapsed="0.000461"/>
+<status status="PASS" start="2026-10-23T14:16:08.356513" elapsed="0.016615"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.374972" level="INFO">Campo senha preenchido</msg>
 <arg>Campo senha preenchido</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.507074" elapsed="0.000300"/>
+<status status="PASS" start="2026-10-23T14:16:08.373395" elapsed="0.002188"/>
 </kw>
 <kw name="Get Property" owner="Browser">
+<msg time="2026-10-23T14:16:08.411136" level="INFO">Property: 'Heloisa Pereira'</msg>
+<msg time="2026-10-23T14:16:08.411268" level="INFO">${nome_campo} = Heloisa Pereira</msg>
 <var>${nome_campo}</var>
 <arg>input[data-qa="name"]</arg>
 <arg>value</arg>
@@ -386,21 +449,24 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the ``property`` of the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.507505" elapsed="0.000338"/>
+<status status="PASS" start="2026-10-23T14:16:08.380732" elapsed="0.030558"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${nome_campo}</arg>
 <arg>${nome}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.507995" elapsed="0.000273"/>
+<status status="PASS" start="2026-10-23T14:16:08.411490" elapsed="0.000635"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.413211" level="INFO">Campo nome validado com sucesso</msg>
 <arg>Campo nome validado com sucesso</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.508421" elapsed="0.000287"/>
+<status status="PASS" start="2026-10-23T14:16:08.412476" elapsed="0.001678"/>
 </kw>
 <kw name="Get Property" owner="Browser">
+<msg time="2026-10-23T14:16:08.426139" level="INFO">Property: 'heloisa.pereira1792775764@test.com'</msg>
+<msg time="2026-10-23T14:16:08.426273" level="INFO">${email_campo} = heloisa.pereira1792775764@test.com</msg>
 <var>${email_campo}</var>
 <arg>input[data-qa="email"]</arg>
 <arg>value</arg>
@@ -408,504 +474,513 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the ``property`` of the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.508831" elapsed="0.000337"/>
+<status status="PASS" start="2026-10-23T14:16:08.414543" elapsed="0.011752"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${email_campo}</arg>
 <arg>${email}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.509306" elapsed="0.000227"/>
+<status status="PASS" start="2026-10-23T14:16:08.426690" elapsed="0.000790"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.428243" level="INFO">Campo email validado com sucesso</msg>
 <arg>Campo email validado com sucesso</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.509669" elapsed="0.000234"/>
+<status status="PASS" start="2026-10-23T14:16:08.427731" elapsed="0.000719"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.429620" level="INFO">${dia} = 14</msg>
 <var>${dia}</var>
 <arg>str(random.randint(1, 28))</arg>
 <arg>modules=random</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.510022" elapsed="0.000298"/>
+<status status="PASS" start="2026-10-23T14:16:08.428702" elapsed="0.000973"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.431287" level="INFO">${mes} = 5</msg>
 <var>${mes}</var>
 <arg>str(random.randint(1, 12))</arg>
 <arg>modules=random</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.510453" elapsed="0.000249"/>
+<status status="PASS" start="2026-10-23T14:16:08.429967" elapsed="0.001376"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.432560" level="INFO">${ano} = 1979</msg>
 <var>${ano}</var>
 <arg>str(random.randint(1950, 2000))</arg>
 <arg>modules=random</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.510827" elapsed="0.000239"/>
+<status status="PASS" start="2026-10-23T14:16:08.431629" elapsed="0.000979"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.433651" level="INFO">Data de nascimento gerada: 14/5/1979</msg>
 <arg>Data de nascimento gerada: ${dia}/${mes}/${ano}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.511207" elapsed="0.000236"/>
+<status status="PASS" start="2026-10-23T14:16:08.432881" elapsed="0.001365"/>
 </kw>
 <kw name="Select Options By" owner="Browser">
+<msg time="2026-10-23T14:16:08.435532" level="INFO">Selects the option(s) 14 by attribute SelectAttribute.value from element select[data-qa="days"].</msg>
 <arg>select[data-qa="days"]</arg>
 <arg>value</arg>
 <arg>${dia}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Selects options from select element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.511567" elapsed="0.000342"/>
+<status status="PASS" start="2026-10-23T14:16:08.434540" elapsed="0.027338"/>
 </kw>
 <kw name="Select Options By" owner="Browser">
+<msg time="2026-10-23T14:16:08.463689" level="INFO">Selects the option(s) 5 by attribute SelectAttribute.value from element select[data-qa="months"].</msg>
 <arg>select[data-qa="months"]</arg>
 <arg>value</arg>
 <arg>${mes}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Selects options from select element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.512046" elapsed="0.000349"/>
+<status status="PASS" start="2026-10-23T14:16:08.462330" elapsed="0.024290"/>
 </kw>
 <kw name="Select Options By" owner="Browser">
+<msg time="2026-10-23T14:16:08.488046" level="INFO">Selects the option(s) 1979 by attribute SelectAttribute.value from element select[data-qa="years"].</msg>
 <arg>select[data-qa="years"]</arg>
 <arg>value</arg>
 <arg>${ano}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Selects options from select element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.512527" elapsed="0.000325"/>
+<status status="PASS" start="2026-10-23T14:16:08.487037" elapsed="0.038894"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.526891" level="INFO">Data de nascimento preenchida com sucesso</msg>
 <arg>Data de nascimento preenchida com sucesso</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.513023" elapsed="0.000414"/>
+<status status="PASS" start="2026-10-23T14:16:08.526279" elapsed="0.000815"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:08.527846" level="INFO">Clicks the element 'input[name="newsletter"]'.</msg>
 <arg>input[name="newsletter"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.513573" elapsed="0.000379"/>
+<status status="PASS" start="2026-10-23T14:16:08.527302" elapsed="0.028140"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.556391" level="INFO">Checkbox de newsletter selecionado</msg>
 <arg>Checkbox de newsletter selecionado</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.514157" elapsed="0.000673"/>
+<status status="PASS" start="2026-10-23T14:16:08.555737" elapsed="0.000858"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:08.557485" level="INFO">Clicks the element 'input[name="optin"]'.</msg>
 <arg>input[name="optin"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.515173" elapsed="0.000784"/>
+<status status="PASS" start="2026-10-23T14:16:08.556822" elapsed="0.037392"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.595384" level="INFO">Checkbox de ofertas selecionado</msg>
 <arg>Checkbox de ofertas selecionado</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.516376" elapsed="0.000494"/>
+<status status="PASS" start="2026-10-23T14:16:08.594539" elapsed="0.004565"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.500299" elapsed="0.016677"/>
-</kw>
-<kw name="Preencher Endereco" owner="Cadastro">
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.600370" level="INFO">Iniciando preenchimento do endereço</msg>
 <arg>Iniciando preenchimento do endereço</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.518708" elapsed="0.000897"/>
+<status status="PASS" start="2026-10-23T14:16:08.599514" elapsed="0.001138"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:08.608516" level="INFO">Waited for Element with selector xpath=//h2[contains(., "Address Information")] at state visible</msg>
 <arg>xpath=//h2[contains(., "Address Information")]</arg>
 <arg>visible</arg>
 <arg>timeout=180</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.519969" elapsed="0.001020"/>
+<status status="PASS" start="2026-10-23T14:16:08.600986" elapsed="0.007754"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.609796" level="INFO">Formulario de criacao visivel</msg>
 <arg>Formulario de criacao visivel</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.521319" elapsed="0.000563"/>
+<status status="PASS" start="2026-10-23T14:16:08.609085" elapsed="0.000928"/>
 </kw>
 <kw name="Last Name" owner="FakerLibrary">
+<msg time="2026-10-23T14:16:08.610738" level="INFO">${sobrenome} = Borges</msg>
 <var>${sobrenome}</var>
-<status status="NOT RUN" start="2026-10-23T11:46:46.522083" elapsed="0.000218"/>
+<status status="PASS" start="2026-10-23T14:16:08.610238" elapsed="0.000536"/>
 </kw>
 <kw name="Street Address" owner="FakerLibrary">
+<msg time="2026-10-23T14:16:08.611419" level="INFO">${endereco} = Jardim Pires, 25</msg>
 <var>${endereco}</var>
 <doc>:example: '791 Crist Parks'</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.522457" elapsed="0.000184"/>
+<status status="PASS" start="2026-10-23T14:16:08.610955" elapsed="0.000506"/>
 </kw>
 <kw name="State Abbr" owner="FakerLibrary">
+<msg time="2026-10-23T14:16:08.612022" level="INFO">${estado} = SC</msg>
 <var>${estado}</var>
-<status status="NOT RUN" start="2026-10-23T11:46:46.522795" elapsed="0.000175"/>
+<status status="PASS" start="2026-10-23T14:16:08.611623" elapsed="0.000440"/>
 </kw>
 <kw name="City" owner="FakerLibrary">
+<msg time="2026-10-23T14:16:08.613825" level="INFO">${cidade} = da Paz Paulista</msg>
 <var>${cidade}</var>
 <doc>:example: 'Sashabury'</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.523078" elapsed="0.000135"/>
+<status status="PASS" start="2026-10-23T14:16:08.612412" elapsed="0.001480"/>
 </kw>
 <kw name="Postcode" owner="FakerLibrary">
+<msg time="2026-10-23T14:16:08.614807" level="INFO">${cep} = 26297505</msg>
 <var>${cep}</var>
 <doc>Randomly returns a postcode.
 :param formatted: True to allow formatted postcodes, else False (default True)
 :example formatted: '41224-212' '83992-291' '12324322'
 :example raw: '43920231' '34239530'</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.523341" elapsed="0.000185"/>
+<status status="PASS" start="2026-10-23T14:16:08.614139" elapsed="0.000715"/>
 </kw>
 <kw name="Phone Number" owner="FakerLibrary">
+<msg time="2026-10-23T14:16:08.615838" level="INFO">${telefone} = 61 7342-4163</msg>
 <var>${telefone}</var>
-<status status="NOT RUN" start="2026-10-23T11:46:46.523669" elapsed="0.000189"/>
+<status status="PASS" start="2026-10-23T14:16:08.615225" elapsed="0.000656"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.616892" level="INFO">Preenchendo endereço com dados aleatórios</msg>
 <arg>Preenchendo endereço com dados aleatórios</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.524086" elapsed="0.000441"/>
+<status status="PASS" start="2026-10-23T14:16:08.616156" elapsed="0.001172"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:08.618696" level="INFO">Fills the text 'Heloisa Pereira' in the given field.</msg>
 <arg>input[data-qa="first_name"]</arg>
 <arg>${nome}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.524724" elapsed="0.000497"/>
+<status status="PASS" start="2026-10-23T14:16:08.617638" elapsed="0.020409"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:08.639491" level="INFO">Fills the text 'Borges' in the given field.</msg>
 <arg>input[data-qa="last_name"]</arg>
 <arg>${sobrenome}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.525377" elapsed="0.000420"/>
+<status status="PASS" start="2026-10-23T14:16:08.638485" elapsed="0.020128"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:08.660098" level="INFO">Fills the text 'Jardim Pires, 25' in the given field.</msg>
 <arg>input[data-qa="address"]</arg>
 <arg>${endereco}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.525959" elapsed="0.000441"/>
+<status status="PASS" start="2026-10-23T14:16:08.658980" elapsed="0.018927"/>
 </kw>
 <kw name="Select Options By" owner="Browser">
+<msg time="2026-10-23T14:16:08.679305" level="INFO">Selects the option(s) Canada by attribute SelectAttribute.value from element select[data-qa="country"].</msg>
 <arg>select[data-qa="country"]</arg>
 <arg>value</arg>
 <arg>Canada</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Selects options from select element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.526569" elapsed="0.000481"/>
+<status status="PASS" start="2026-10-23T14:16:08.678279" elapsed="0.027426"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:08.707125" level="INFO">Fills the text 'SC' in the given field.</msg>
 <arg>input[data-qa="state"]</arg>
 <arg>${estado}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.527277" elapsed="0.000620"/>
+<status status="PASS" start="2026-10-23T14:16:08.706065" elapsed="0.016294"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:08.725277" level="INFO">Fills the text 'da Paz Paulista' in the given field.</msg>
 <arg>input[data-qa="city"]</arg>
 <arg>${cidade}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.528128" elapsed="0.000950"/>
+<status status="PASS" start="2026-10-23T14:16:08.722723" elapsed="0.021201"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:08.745466" level="INFO">Fills the text '26297505' in the given field.</msg>
 <arg>input[data-qa="zipcode"]</arg>
 <arg>${cep}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.529447" elapsed="0.000777"/>
+<status status="PASS" start="2026-10-23T14:16:08.744311" elapsed="0.015780"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:08.761473" level="INFO">Fills the text '61 7342-4163' in the given field.</msg>
 <arg>input[data-qa="mobile_number"]</arg>
 <arg>${telefone}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.530429" elapsed="0.000560"/>
+<status status="PASS" start="2026-10-23T14:16:08.760472" elapsed="0.015787"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:08.777366" level="INFO">Endereço preenchido - Nome: Heloisa Pereira Borges, Cidade: da Paz Paulista, Tel: 61 7342-4163</msg>
 <arg>Endereço preenchido - Nome: ${nome} ${sobrenome}, Cidade: ${cidade}, Tel: ${telefone}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.531191" elapsed="0.000379"/>
+<status status="PASS" start="2026-10-23T14:16:08.776647" elapsed="0.000881"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.517578" elapsed="0.014060"/>
-</kw>
-<kw name="Submeter Cadastro" owner="Cadastro">
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:08.778386" level="INFO">Clicks the element 'button[data-qa="create-account"]'.</msg>
 <arg>button[data-qa="create-account"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.532544" elapsed="0.000417"/>
+<status status="PASS" start="2026-10-23T14:16:08.777748" elapsed="2.702423"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.531999" elapsed="0.001026"/>
-</kw>
-<kw name="Validar Cadastro Sucesso" owner="Cadastro">
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:11.542737" level="INFO">Waited for Element with selector text=Account Created! at state visible</msg>
 <arg>text=${MSG_CONTA_CRIADA}</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.533884" elapsed="0.000613"/>
+<status status="PASS" start="2026-10-23T14:16:11.480707" elapsed="0.062178"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:11.543726" level="INFO">Clicks the element 'xpath=//a[contains(text(), "Continue")]'.</msg>
 <arg>xpath=//a[contains(text(), "Continue")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.534944" elapsed="0.000641"/>
+<status status="PASS" start="2026-10-23T14:16:11.543090" elapsed="0.721451"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.533353" elapsed="0.002338"/>
+<status status="PASS" start="2026-10-23T14:16:04.846205" elapsed="7.418522"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-23T14:16:12.512024" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/01_cadastro_sucesso.png" target="_blank"&gt;&lt;img src="browser/screenshot/01_cadastro_sucesso.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <arg>01_cadastro_sucesso</arg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.536243" elapsed="0.000692"/>
+<status status="PASS" start="2026-10-23T14:16:12.265389" elapsed="0.246973"/>
 </kw>
-<kw name="Clica na aba Produtos" owner="Produto">
+<kw name="Pesquisar Produto" owner="Produto">
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:12.514644" level="INFO">Clicando na aba de produtos</msg>
 <arg>Clicando na aba de produtos</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.538337" elapsed="0.000461"/>
+<status status="PASS" start="2026-10-23T14:16:12.513725" elapsed="0.001150"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:12.516051" level="INFO">Clicks the element 'xpath=//a[contains(text(), "Products")]'.</msg>
 <arg>xpath=//a[contains(text(), "Products")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.538953" elapsed="0.000413"/>
+<status status="PASS" start="2026-10-23T14:16:12.515155" elapsed="3.235403"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
+<msg time="2026-10-23T14:16:18.752234" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses execution for the given time.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.539493" elapsed="0.000310"/>
+<status status="PASS" start="2026-10-23T14:16:15.750928" elapsed="3.001458"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:18.753525" level="INFO">Página de produtos carregada</msg>
 <arg>Página de produtos carregada</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.539993" elapsed="0.000304"/>
+<status status="PASS" start="2026-10-23T14:16:18.752732" elapsed="0.000981"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.537644" elapsed="0.002715"/>
-</kw>
-<kw name="Preencher Busca" owner="Produto">
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:18.754681" level="INFO">Fills the text 'Blue Top' in the given field.</msg>
 <arg>xpath=//input[@id="search_product"]</arg>
 <arg>${produto}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.541103" elapsed="0.000457"/>
+<status status="PASS" start="2026-10-23T14:16:18.753986" elapsed="0.019300"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:18.775029" level="INFO">Campo de busca preenchido com: Blue Top</msg>
 <arg>Campo de busca preenchido com: ${produto}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.541735" elapsed="0.000307"/>
+<status status="PASS" start="2026-10-23T14:16:18.774104" elapsed="0.001241"/>
 </kw>
-<arg>${PRODUTO_BUSCA}</arg>
-<status status="PASS" start="2026-10-23T11:46:46.540672" elapsed="0.001429"/>
-</kw>
-<kw name="Take Screenshot" owner="Browser">
-<arg>03_busca_produto_preenchida</arg>
-<tag>PageContent</tag>
-<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.542524" elapsed="0.000599"/>
-</kw>
-<kw name="Submeter Busca" owner="Produto">
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:18.776247" level="INFO">Clicks the element 'xpath=//button[@id="submit_search"]'.</msg>
 <arg>xpath=//button[@id="submit_search"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.543917" elapsed="0.000561"/>
+<status status="PASS" start="2026-10-23T14:16:18.775620" elapsed="2.031912"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:20.808828" level="INFO">Botão de busca clicado</msg>
 <arg>Botão de busca clicado</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.544735" elapsed="0.000415"/>
+<status status="PASS" start="2026-10-23T14:16:20.808018" elapsed="0.001280"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.543437" elapsed="0.001802"/>
-</kw>
-<kw name="Take Screenshot" owner="Browser">
-<arg>04_busca_produto_submetida</arg>
-<tag>PageContent</tag>
-<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.545589" elapsed="0.000565"/>
-</kw>
-<kw name="Validar Busca Sucesso" owner="Produto">
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:20.859999" level="INFO">Waited for Element with selector xpath=//h2[contains(text(), "Searched Products")] at state visible</msg>
 <arg>xpath=//h2[contains(text(), "Searched Products")]</arg>
 <arg>visible</arg>
 <arg>timeout=180</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.546914" elapsed="0.001223"/>
+<status status="PASS" start="2026-10-23T14:16:20.809617" elapsed="0.050715"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:20.861627" level="INFO">Busca realizada com sucesso!</msg>
 <arg>Busca realizada com sucesso!</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.548429" elapsed="0.000511"/>
+<status status="PASS" start="2026-10-23T14:16:20.860820" elapsed="0.010017"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.546440" elapsed="0.002608"/>
+<arg>${PRODUTO_BUSCA}</arg>
+<status status="PASS" start="2026-10-23T14:16:12.512815" elapsed="8.358496"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-23T14:16:21.025896" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/05_busca_produto_sucesso.png" target="_blank"&gt;&lt;img src="browser/screenshot/05_busca_produto_sucesso.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <arg>05_busca_produto_sucesso</arg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.549546" elapsed="0.000659"/>
+<status status="PASS" start="2026-10-23T14:16:20.873118" elapsed="0.153011"/>
 </kw>
-<kw name="Clicar no Produto" owner="Produto">
+<kw name="Adicionar Produto" owner="Produto">
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:21.028439" level="INFO">Clicks the element 'xpath=//a[contains(text(), "View Product")]'.</msg>
 <arg>xpath=//a[contains(text(), "View Product")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.552412" elapsed="0.001018"/>
+<status status="PASS" start="2026-10-23T14:16:21.027675" elapsed="5.395304"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:26.424240" level="INFO">Clicando no produto encontrado</msg>
 <arg>Clicando no produto encontrado</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.553740" elapsed="0.000566"/>
+<status status="PASS" start="2026-10-23T14:16:26.423352" elapsed="0.002453"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.551542" elapsed="0.002891"/>
-</kw>
-<kw name="Take Screenshot" owner="Browser">
-<arg>06_detalhes_produto</arg>
-<tag>PageContent</tag>
-<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.555045" elapsed="0.000782"/>
-</kw>
-<kw name="Adicinar quantidade" owner="Produto">
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:26.469451" level="INFO">Waited for Element with selector xpath=//input[@id="quantity"] at state visible</msg>
 <arg>xpath=//input[@id="quantity"]</arg>
 <arg>visible</arg>
 <arg>timeout=10s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.557031" elapsed="0.000721"/>
+<status status="PASS" start="2026-10-23T14:16:26.426141" elapsed="0.043515"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:26.470826" level="INFO">Fills the text '2' in the given field.</msg>
 <arg>xpath=//input[@id="quantity"]</arg>
 <arg>2</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.557908" elapsed="0.000390"/>
+<status status="PASS" start="2026-10-23T14:16:26.469927" elapsed="0.009618"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:26.480995" level="INFO">Quantidade do produto preenchida com: 2</msg>
 <arg>Quantidade do produto preenchida com: 2</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.558472" elapsed="0.000293"/>
+<status status="PASS" start="2026-10-23T14:16:26.480084" elapsed="0.001121"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.556311" elapsed="0.002512"/>
-</kw>
-<kw name="Adicionar ao Carrinho" owner="Produto">
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:26.482745" level="INFO">Clicks the element 'xpath=//button[@class="btn btn-default cart"]'.</msg>
 <arg>xpath=//button[@class="btn btn-default cart"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.559641" elapsed="0.000526"/>
+<status status="PASS" start="2026-10-23T14:16:26.481545" elapsed="0.077828"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:26.560172" level="INFO">Botão de adicionar ao carrinho clicado</msg>
 <arg>Botão de adicionar ao carrinho clicado</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.560392" elapsed="0.000410"/>
+<status status="PASS" start="2026-10-23T14:16:26.559615" elapsed="0.000732"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.559160" elapsed="0.001721"/>
-</kw>
-<kw name="Take Screenshot" owner="Browser">
-<arg>07_produto_adicionado</arg>
-<tag>PageContent</tag>
-<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.561205" elapsed="0.000540"/>
-</kw>
-<kw name="Checar nome do modal" owner="Produto">
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:27.364074" level="INFO">Waited for Element with selector xpath=//div[@id="cartModal"] at state visible</msg>
 <arg>xpath=//div[@id="cartModal"]</arg>
 <arg>visible</arg>
 <arg>timeout=180</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.562667" elapsed="0.000445"/>
+<status status="PASS" start="2026-10-23T14:16:26.560582" elapsed="0.803733"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:27.365572" level="INFO">Modal de produto visível</msg>
 <arg>Modal de produto visível</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.563279" elapsed="0.000289"/>
+<status status="PASS" start="2026-10-23T14:16:27.364719" elapsed="0.001102"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:27.372520" level="INFO">Waited for Element with selector xpath=//div[@id="cartModal"]//h4[contains(text(), "Added!")] at state visible</msg>
 <arg>xpath=//div[@id="cartModal"]//h4[contains(text(), "Added!")]</arg>
 <arg>visible</arg>
 <arg>timeout=180</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.563719" elapsed="0.000383"/>
+<status status="PASS" start="2026-10-23T14:16:27.366153" elapsed="0.006517"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:27.373503" level="INFO">Produto adicionado ao carrinho com sucesso!</msg>
 <arg>Produto adicionado ao carrinho com sucesso!</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.564261" elapsed="0.000260"/>
+<status status="PASS" start="2026-10-23T14:16:27.372898" elapsed="0.000750"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:27.374486" level="INFO">Clicks the element 'xpath=//button[contains(text(), "Continue Shopping")]'.</msg>
 <arg>xpath=//button[contains(text(), "Continue Shopping")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.564641" elapsed="0.000319"/>
+<status status="PASS" start="2026-10-23T14:16:27.373834" elapsed="0.050754"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:27.425323" level="INFO">Fechando modal de produto</msg>
 <arg>Fechando modal de produto</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.565111" elapsed="0.000281"/>
+<status status="PASS" start="2026-10-23T14:16:27.424839" elapsed="0.000622"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.562120" elapsed="0.003334"/>
-</kw>
-<kw name="Validar Produto no Carrinho" owner="Produto">
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:27.426143" level="INFO">Clicks the element 'xpath=//a[contains(text(), "Cart")]'.</msg>
 <arg>xpath=//a[contains(text(), "Cart")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.566083" elapsed="0.000393"/>
+<status status="PASS" start="2026-10-23T14:16:27.425641" elapsed="1.181847"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:28.608784" level="INFO">Navegando para a aba do carrinho</msg>
 <arg>Navegando para a aba do carrinho</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.566707" elapsed="0.000403"/>
+<status status="PASS" start="2026-10-23T14:16:28.607903" elapsed="0.001096"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
+<msg time="2026-10-23T14:16:30.610430" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses execution for the given time.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.567283" elapsed="0.000419"/>
+<status status="PASS" start="2026-10-23T14:16:28.609261" elapsed="2.001396"/>
 </kw>
 <kw name="Get Url" owner="Browser">
 <arg>==</arg>
@@ -914,280 +989,332 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the current URL.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.567877" elapsed="0.000626"/>
+<status status="PASS" start="2026-10-23T14:16:30.611073" elapsed="0.007308"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:30.652096" level="INFO">Waited for Element with selector xpath=//table[@id="cart_info_table"] at state visible</msg>
 <arg>xpath=//table[@id="cart_info_table"]</arg>
 <arg>visible</arg>
 <arg>timeout=10s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.568778" elapsed="0.000650"/>
+<status status="PASS" start="2026-10-23T14:16:30.618989" elapsed="0.033461"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:30.654460" level="INFO">Tabela do carrinho visível</msg>
 <arg>Tabela do carrinho visível</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.569750" elapsed="0.000679"/>
+<status status="PASS" start="2026-10-23T14:16:30.653122" elapsed="0.001662"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:30.670033" level="INFO">Waited for Element with selector xpath=//table[@id="cart_info_table"]//tr[.//a[contains(normalize-space(.), "Blue Top")]] at state visible</msg>
 <arg>xpath=//table[@id="cart_info_table"]//tr[.//a[contains(normalize-space(.), "${PRODUTO_BUSCA}")]]</arg>
 <arg>visible</arg>
 <arg>timeout=180</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.570674" elapsed="0.000522"/>
+<status status="PASS" start="2026-10-23T14:16:30.655315" elapsed="0.015458"/>
 </kw>
 <kw name="Get Text" owner="Browser">
+<msg time="2026-10-23T14:16:30.697186" level="INFO">Text: '2'</msg>
+<msg time="2026-10-23T14:16:30.697323" level="INFO">${qtd} = 2</msg>
 <var>${qtd}</var>
 <arg>xpath=//table[@id="cart_info_table"]//tr[.//a[contains(normalize-space(.), "${PRODUTO_BUSCA}")]]//button[contains(@class, "disabled")]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.571404" elapsed="0.000525"/>
+<status status="PASS" start="2026-10-23T14:16:30.671232" elapsed="0.026116"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-10-23T14:16:30.698609" level="INFO">Length is 1.</msg>
 <arg>${qtd}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.572093" elapsed="0.000309"/>
+<status status="PASS" start="2026-10-23T14:16:30.697591" elapsed="0.001122"/>
 </kw>
 <kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2026-10-23T14:16:30.699775" level="INFO">${qtd_numero} = 2</msg>
 <var>${qtd_numero}</var>
 <arg>${qtd}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.572553" elapsed="0.000307"/>
+<status status="PASS" start="2026-10-23T14:16:30.698986" elapsed="0.000820"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${qtd_numero} &gt; 0</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.573017" elapsed="0.000277"/>
+<status status="PASS" start="2026-10-23T14:16:30.699982" elapsed="0.000494"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:30.701004" level="INFO">Produto adicionado ao carrinho com quantidade: 2</msg>
 <arg>Produto adicionado ao carrinho com quantidade: ${qtd}</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.573506" elapsed="0.000579"/>
+<status status="PASS" start="2026-10-23T14:16:30.700655" elapsed="0.000524"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.565763" elapsed="0.008416"/>
+<status status="PASS" start="2026-10-23T14:16:21.026939" elapsed="9.674384"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-23T14:16:30.769429" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/08_carrinho_com_produto.png" target="_blank"&gt;&lt;img src="browser/screenshot/08_carrinho_com_produto.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <arg>08_carrinho_com_produto</arg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.574630" elapsed="0.000463"/>
+<status status="PASS" start="2026-10-23T14:16:30.701671" elapsed="0.068863"/>
 </kw>
-<kw name="Fazer checkout" owner="Pagamento">
+<kw name="Fazer checkout" owner="PagamentoPage">
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:30.790618" level="INFO">Waited for Element with selector xpath=//a[contains(text(), "Proceed To Checkout")] at state visible</msg>
 <arg>xpath=//a[contains(text(), "Proceed To Checkout")]</arg>
 <arg>visible</arg>
 <arg>timeout=10s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.575750" elapsed="0.000532"/>
+<status status="PASS" start="2026-10-23T14:16:30.772365" elapsed="0.018435"/>
 </kw>
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:30.791610" level="INFO">Clicks the element 'xpath=//a[contains(text(), "Proceed To Checkout")]'.</msg>
 <arg>xpath=//a[contains(text(), "Proceed To Checkout")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.576486" elapsed="0.000463"/>
+<status status="PASS" start="2026-10-23T14:16:30.791001" elapsed="0.932934"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:31.755268" level="INFO">Waited for Element with selector xpath=//h2[contains(text(), "Address Details")] at state visible</msg>
 <arg>xpath=//h2[contains(text(), "Address Details")]</arg>
 <arg>visible</arg>
 <arg>timeout=10s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.577119" elapsed="0.000427"/>
+<status status="PASS" start="2026-10-23T14:16:31.724183" elapsed="0.031322"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:31.756850" level="INFO">Página de checkout carregada com sucesso!</msg>
 <arg>Página de checkout carregada com sucesso!</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.577723" elapsed="0.000304"/>
+<status status="PASS" start="2026-10-23T14:16:31.755898" elapsed="0.001178"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.575386" elapsed="0.002704"/>
+<status status="PASS" start="2026-10-23T14:16:30.771644" elapsed="0.985614"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-23T14:16:38.452697" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/09_checkout.png" target="_blank"&gt;&lt;img src="browser/screenshot/09_checkout.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <arg>09_checkout</arg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.578718" elapsed="0.000708"/>
+<status status="PASS" start="2026-10-23T14:16:31.757708" elapsed="6.695121"/>
 </kw>
-<kw name="Finalizar Compra" owner="Pagamento">
+<kw name="Finalizar Compra" owner="PagamentoPage">
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:38.454658" level="INFO">Clicks the element 'xpath=//a[contains(text(), "Place Order")]'.</msg>
 <arg>xpath=//a[contains(text(), "Place Order")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.580361" elapsed="0.000581"/>
+<status status="PASS" start="2026-10-23T14:16:38.453938" elapsed="0.073067"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:43.054948" level="INFO">Waited for Element with selector xpath=//h2[contains(text(), "Payment")] at state visible</msg>
 <arg>xpath=//h2[contains(text(), "Payment")]</arg>
 <arg>visible</arg>
 <arg>timeout=10s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.581182" elapsed="0.000623"/>
+<status status="PASS" start="2026-10-23T14:16:38.527373" elapsed="4.527861"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.056633" level="INFO">Página de pagamento carregada com sucesso!</msg>
 <arg>Página de pagamento carregada com sucesso!</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.582090" elapsed="0.000457"/>
+<status status="PASS" start="2026-10-23T14:16:43.055670" elapsed="0.001208"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.579804" elapsed="0.002836"/>
+<status status="PASS" start="2026-10-23T14:16:38.453323" elapsed="4.603712"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-23T14:16:43.171169" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/10_pagina_pagamento.png" target="_blank"&gt;&lt;img src="browser/screenshot/10_pagina_pagamento.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <arg>10_pagina_pagamento</arg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.583045" elapsed="0.000575"/>
+<status status="PASS" start="2026-10-23T14:16:43.057666" elapsed="0.113776"/>
 </kw>
-<kw name="Gerar Dados do Cartão" owner="cartao">
+<kw name="Gerar Dados do Cartão" owner="Cartao">
 <kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.173453" level="INFO">${numero_cartao} = 4111 1111 1111 1111</msg>
 <var>${numero_cartao}</var>
 <arg>4111 1111 1111 1111</arg>
 <doc>Returns the given values which can then be assigned to a variable.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.584502" elapsed="0.000427"/>
+<status status="PASS" start="2026-10-23T14:16:43.172748" elapsed="0.000755"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.174422" level="INFO">${NUMERO_CARTAO} = 4111 1111 1111 1111</msg>
 <arg>${NUMERO_CARTAO}</arg>
 <arg>${numero_cartao}</arg>
 <doc>Makes the variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.585146" elapsed="0.000374"/>
+<status status="PASS" start="2026-10-23T14:16:43.173756" elapsed="0.000770"/>
 </kw>
 <kw name="Generate Random String" owner="String">
+<msg time="2026-10-23T14:16:43.175283" level="INFO">${nome_cartao} = TsFLjSUmoE</msg>
 <var>${nome_cartao}</var>
 <arg>10</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired `length` from the given `chars`.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.585733" elapsed="0.000233"/>
+<status status="PASS" start="2026-10-23T14:16:43.174788" elapsed="0.000540"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.176154" level="INFO">${nome_cartao_formatado} = TESTE-TsFLjSUmoE</msg>
 <var>${nome_cartao_formatado}</var>
 <arg>TESTE-${nome_cartao}</arg>
 <doc>Returns the given values which can then be assigned to a variable.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.586330" elapsed="0.000802"/>
+<status status="PASS" start="2026-10-23T14:16:43.175547" elapsed="0.000652"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.177132" level="INFO">${NOME_CARTAO} = TESTE-TsFLjSUmoE</msg>
 <arg>${NOME_CARTAO}</arg>
 <arg>${nome_cartao_formatado}</arg>
 <doc>Makes the variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.587384" elapsed="0.000382"/>
+<status status="PASS" start="2026-10-23T14:16:43.176430" elapsed="0.000772"/>
 </kw>
 <kw name="Generate Random String" owner="String">
+<msg time="2026-10-23T14:16:43.177870" level="INFO">${cvc_cartao} = 202</msg>
 <var>${cvc_cartao}</var>
 <arg>3</arg>
 <arg>[NUMBERS]</arg>
 <doc>Generates a string with a desired `length` from the given `chars`.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.587929" elapsed="0.000196"/>
+<status status="PASS" start="2026-10-23T14:16:43.177442" elapsed="0.000473"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.178891" level="INFO">${CVC_CARTAO} = 202</msg>
 <arg>${CVC_CARTAO}</arg>
 <arg>${cvc_cartao}</arg>
 <doc>Makes the variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.588269" elapsed="0.000315"/>
+<status status="PASS" start="2026-10-23T14:16:43.178141" elapsed="0.000831"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.181229" level="INFO">${mes_expiracao} = 03</msg>
 <var>${mes_expiracao}</var>
 <arg>str(random.randint(1, 12)).zfill(2)</arg>
 <arg>modules=random</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.588792" elapsed="0.000309"/>
+<status status="PASS" start="2026-10-23T14:16:43.179249" elapsed="0.002051"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.182709" level="INFO">${MES_EXPIRACAO_CARTAO} = 03</msg>
 <arg>${MES_EXPIRACAO_CARTAO}</arg>
 <arg>${mes_expiracao}</arg>
 <doc>Makes the variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.589236" elapsed="0.000279"/>
+<status status="PASS" start="2026-10-23T14:16:43.181645" elapsed="0.001158"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.184028" level="INFO">${ano_expiracao} = 2031</msg>
 <var>${ano_expiracao}</var>
 <arg>str(datetime.datetime.now().year + random.randint(2, 5))</arg>
 <arg>modules=datetime,random</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.589652" elapsed="0.000299"/>
+<status status="PASS" start="2026-10-23T14:16:43.183115" elapsed="0.000979"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.185078" level="INFO">${ANO_EXPIRACAO_CARTAO} = 2031</msg>
 <arg>${ANO_EXPIRACAO_CARTAO}</arg>
 <arg>${ano_expiracao}</arg>
 <doc>Makes the variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.590110" elapsed="0.000288"/>
+<status status="PASS" start="2026-10-23T14:16:43.184373" elapsed="0.000775"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.185974" level="INFO">Dados sintéticos do cartão preparados.</msg>
+<arg>Dados sintéticos do cartão preparados.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-23T14:16:43.185463" elapsed="0.000586"/>
 </kw>
 <doc>Gera dados sintéticos para o formulário de cartão de teste.</doc>
-<status status="PASS" start="2026-10-23T11:46:46.584027" elapsed="0.006441"/>
+<status status="PASS" start="2026-10-23T14:16:43.172065" elapsed="0.014105"/>
 </kw>
-<kw name="Cadastrar Cartão" owner="Pagamento">
+<kw name="Cadastrar Cartão" owner="PagamentoPage">
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:43.188143" level="INFO">Fills the text 'TESTE-TsFLjSUmoE' in the given field.</msg>
 <arg>xpath=//input[@name="name_on_card"]</arg>
 <arg>${NOME_CARTAO}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.591211" elapsed="0.000415"/>
+<status status="PASS" start="2026-10-23T14:16:43.187266" elapsed="0.016077"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:43.205248" level="INFO">Fills the text '4111 1111 1111 1111' in the given field.</msg>
 <arg>xpath=//input[@name="card_number"]</arg>
 <arg>${NUMERO_CARTAO}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.591765" elapsed="0.000365"/>
+<status status="PASS" start="2026-10-23T14:16:43.203814" elapsed="0.021020"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:43.226222" level="INFO">Fills the text '202' in the given field.</msg>
 <arg>xpath=//input[@name="cvc"]</arg>
 <arg>${CVC_CARTAO}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.592262" elapsed="0.000379"/>
+<status status="PASS" start="2026-10-23T14:16:43.225231" elapsed="0.016689"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:43.243544" level="INFO">Fills the text '03' in the given field.</msg>
 <arg>xpath=//input[@name="expiry_month"]</arg>
 <arg>${MES_EXPIRACAO_CARTAO}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.592782" elapsed="0.000339"/>
+<status status="PASS" start="2026-10-23T14:16:43.242285" elapsed="0.017470"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
+<msg time="2026-10-23T14:16:43.261292" level="INFO">Fills the text '2031' in the given field.</msg>
 <arg>xpath=//input[@name="expiry_year"]</arg>
 <arg>${ANO_EXPIRACAO_CARTAO}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.593249" elapsed="0.000364"/>
+<status status="PASS" start="2026-10-23T14:16:43.260142" elapsed="0.015548"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:43.277098" level="INFO">Dados do cartão preenchidos com sucesso!</msg>
 <arg>Dados do cartão preenchidos com sucesso!</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.593791" elapsed="0.000296"/>
+<status status="PASS" start="2026-10-23T14:16:43.276181" elapsed="0.001155"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.590811" elapsed="0.003338"/>
+<status status="PASS" start="2026-10-23T14:16:43.186598" elapsed="0.090897"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-23T14:16:43.361541" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/11_cadastro_cartao.png" target="_blank"&gt;&lt;img src="browser/screenshot/11_cadastro_cartao.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <arg>11_cadastro_cartao</arg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.594551" elapsed="0.000600"/>
+<status status="PASS" start="2026-10-23T14:16:43.277977" elapsed="0.083808"/>
 </kw>
-<kw name="Validar Compra Sucesso" owner="Pagamento">
+<kw name="Validar Compra Sucesso" owner="PagamentoPage">
 <kw name="Click" owner="Browser">
+<msg time="2026-10-23T14:16:43.364660" level="INFO">Clicks the element 'xpath=//button[@id="submit"]'.</msg>
 <arg>xpath=//button[@id="submit"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.596082" elapsed="0.000566"/>
+<status status="PASS" start="2026-10-23T14:16:43.363566" elapsed="1.969168"/>
 </kw>
 <kw name="Wait For Condition" owner="Browser">
+<kw name="Get Url" owner="Browser">
+<arg>contains</arg>
+<arg>/payment_done/</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-10-23T14:16:45.334602" elapsed="0.003466"/>
+</kw>
 <arg>URL</arg>
 <arg>contains</arg>
 <arg>/payment_done/</arg>
@@ -1195,62 +1322,70 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.596902" elapsed="0.000746"/>
+<status status="PASS" start="2026-10-23T14:16:45.333109" elapsed="0.005157"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:45.378573" level="INFO">Waited for Element with selector xpath=//p[contains(., "Congratulations! Your order has been confirmed!")] at state visible</msg>
 <arg>xpath=//p[contains(., "Congratulations! Your order has been confirmed!")]</arg>
 <arg>visible</arg>
 <arg>timeout=20s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.597919" elapsed="0.000623"/>
+<status status="PASS" start="2026-10-23T14:16:45.338597" elapsed="0.040321"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-23T14:16:45.386198" level="INFO">Waited for Element with selector xpath=//h2[@data-qa="order-placed" and normalize-space(.)="Order Placed!"] at state visible</msg>
 <arg>xpath=//h2[@data-qa="order-placed" and normalize-space(.)="Order Placed!"]</arg>
 <arg>visible</arg>
 <arg>timeout=20s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.598784" elapsed="0.000589"/>
+<status status="PASS" start="2026-10-23T14:16:45.379267" elapsed="0.007092"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2026-10-23T14:16:45.387209" level="INFO">Pedido finalizado com sucesso!</msg>
 <arg>Pedido finalizado com sucesso!</arg>
 <arg>console=true</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.599639" elapsed="0.000405"/>
+<status status="PASS" start="2026-10-23T14:16:45.386602" elapsed="0.000782"/>
 </kw>
-<status status="PASS" start="2026-10-23T11:46:46.595577" elapsed="0.004554"/>
+<status status="PASS" start="2026-10-23T14:16:43.362594" elapsed="2.024912"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-23T14:16:45.464193" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/12_compra_sucesso.png" target="_blank"&gt;&lt;img src="browser/screenshot/12_compra_sucesso.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <arg>12_compra_sucesso</arg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.600563" elapsed="0.000517"/>
+<status status="PASS" start="2026-10-23T14:16:45.387941" elapsed="0.076503"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
 <kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-23T14:16:45.537809" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="NOT RUN" start="2026-10-23T11:46:46.602496" elapsed="0.000735"/>
+<status status="PASS" start="2026-10-23T14:16:45.467599" elapsed="0.070420"/>
 </kw>
 <arg>Take Screenshot</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
-<status status="PASS" start="2026-10-23T11:46:46.601865" elapsed="0.001437"/>
+<status status="PASS" start="2026-10-23T14:16:45.466232" elapsed="0.071911"/>
 </kw>
-<msg time="2026-10-23T11:46:47.058888" level="INFO">Starting Browser process C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:64197</msg>
-<tag>carrinho</tag>
-<status status="PASS" start="2026-10-23T11:46:46.470263" elapsed="0.133228"/>
+<msg time="2026-10-23T14:16:45.556186" level="INFO">Switching context to context=d76b5912-e045-4d66-abed-a6ffaaa05046 in CURRENT</msg>
+<msg time="2026-10-23T14:16:45.572811" level="INFO">Successfully changed active context: context=d76b5912-e045-4d66-abed-a6ffaaa05046</msg>
+<msg time="2026-10-23T14:16:45.606788" level="INFO">Successfully closed Context</msg>
+<doc>Cadastra um cartão de teste durante o checkout e valida a compra.</doc>
+<tag>cartao</tag>
+<status status="PASS" start="2026-10-23T14:15:47.316501" elapsed="58.221893"/>
 </test>
-<status status="PASS" start="2026-10-23T11:46:45.281129" elapsed="3.741485"/>
+<status status="PASS" start="2026-10-23T14:15:46.291816" elapsed="59.397285"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">carrinho</stat>
+<stat pass="1" fail="0" skip="0">cartao</stat>
 </tag>
 <suite>
 <stat name="CT 010 CadastrarCartao" id="s1" pass="1" fail="0" skip="0">CT 010 CadastrarCartao</stat>

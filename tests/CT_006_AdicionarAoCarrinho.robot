@@ -11,11 +11,7 @@ Resource    ../resources/Base.resource
 Adicionar Produto ao carrinho
     [Tags]    carrinho
     Verificar homepage
-    Ir Para Login
-    Preencher Login    ${email}    ${senha}
-    Take Screenshot   01_login_Preenchido
-    Submeter Login
-    Validar Login Sucesso
+    Fazer Login    ${email}    ${senha}
     Take Screenshot   02_login_Valido
     Pesquisar Produto    ${PRODUTO_BUSCA}
     Take Screenshot   05_busca_produto_sucesso

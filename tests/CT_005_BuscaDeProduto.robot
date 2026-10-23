@@ -18,11 +18,6 @@ Busca de Produto
     Submeter Login
     Validar Login Sucesso
     Take Screenshot   02_login_Valido.png
-    Clica na aba Produtos
-    Preencher Busca    ${PRODUTO_BUSCA} 
-    Take Screenshot   03_busca_produto_preenchida.png
-    Submeter Busca
-    Take Screenshot  04_busca_produto_submetida.png
-    Validar Busca Sucesso
-    Take Screenshot   05_busca_produto_sucesso.png    
+    Pesquisar Produto    ${PRODUTO_BUSCA}
+    Take Screenshot   05_busca_produto_sucesso.png
 

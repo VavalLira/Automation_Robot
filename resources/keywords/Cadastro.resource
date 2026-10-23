@@ -10,7 +10,7 @@ Resource        ../../data/variables.robot
 
 *** Keywords ***
 
-Criar Conta
+Criar Nova Conta
     #validar se existe o texto "New User Signup!" 
     Wait For Elements State    xpath=//h2[contains(text(), "New User Signup!")]    visible       timeout=180
     Log    Página de cadastro carregada com sucesso ... Iniciando preenchimento    console=true
@@ -19,7 +19,6 @@ Criar Conta
     ${nome}=    Name
     Set Global Variable    ${nome}
     Log    nome gerado: ${nome}    console=true
-
 
     # Criar email baseado no nome SEM ACENTOS
     ${nome_lower}=    Convert To Lower Case    ${nome}
@@ -51,8 +50,7 @@ Criar Conta
     
     Log    Botão de cadastro clicado    console=true
    
-  
-Preencher Dados da Conta
+    #Preencher Dados da Conta
 
     Log    Iniciando preenchimento do formulario    console=true
     Wait For Elements State    xpath=//h2[contains(., "Enter Account Information")]    visible    timeout=180
@@ -97,7 +95,7 @@ Preencher Dados da Conta
     Log    Checkbox de ofertas selecionado    console=true
 
 
-Preencher Endereco
+    #Preencher Endereco
     Log    Iniciando preenchimento do endereço    console=true
     Wait For Elements State    xpath=//h2[contains(., "Address Information")]    visible    timeout=180
     Log    Formulario de criacao visivel    console=true
@@ -124,10 +122,10 @@ Preencher Endereco
     
     Log    Endereço preenchido - Nome: ${nome} ${sobrenome}, Cidade: ${cidade}, Tel: ${telefone}    console=true
 
-Submeter Cadastro
+    #Submeter Cadastro
     Click    button[data-qa="create-account"]
 
-Validar Cadastro Sucesso
+    #Validar Cadastro Sucesso
     Wait For Elements State    text=${MSG_CONTA_CRIADA}    visible
 
     #Clicar no botão de continuar

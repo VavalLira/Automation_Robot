@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.14.0 on win32)" generated="2026-10-23T12:19:28.286418" rpa="false" schemaversion="5">
+<suite id="s1" name="CT 001 CadastrodeCliente &amp; CT 010 CadastrarCartao">
+<suite id="s1-s1" name="CT 001 CadastrodeCliente" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_001_CadastrodeCliente.robot">
+<test id="s1-s1-t1" name="Novo Cadrastro" line="13">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.053543" elapsed="0.000757"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.056394" elapsed="0.000374"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:19:29.055512" elapsed="0.001400"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:19:29.057481" elapsed="0.000267"/>
+</return>
+<status status="PASS" start="2026-10-23T12:19:29.057128" elapsed="0.000738"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:19:29.057076" elapsed="0.000871"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:19:29.055026" elapsed="0.002973"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:19:29.054533" elapsed="0.003563"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:19:29.058219" elapsed="0.000242"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:19:29.051788" elapsed="0.006802"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.059661" elapsed="0.002081"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:29.058766" elapsed="0.003578"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.063373" elapsed="0.002484"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:29.062516" elapsed="0.003549"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:19:29.058731" elapsed="0.007584"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.066786" elapsed="0.000979"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.069334" elapsed="0.000986"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.070664" elapsed="0.000745"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.071770" elapsed="0.000597"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:29.050954" elapsed="0.021574"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.074508" elapsed="0.000833"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.075684" elapsed="0.001025"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.077052" elapsed="0.001147"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.078620" elapsed="0.000678"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:29.073506" elapsed="0.005968"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>00_homepage</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.080250" elapsed="0.001732"/>
+</kw>
+<kw name="Ir Para Login" owner="LoginPage">
+<kw name="Log" owner="BuiltIn">
+<arg>Navegando para a página de login</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.083462" elapsed="0.000605"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${SELECTOR_SIGNUP_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.084342" elapsed="0.000693"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Página de login carregada</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.085380" elapsed="0.000541"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:29.082676" elapsed="0.003371"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_login</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.086478" elapsed="0.000606"/>
+</kw>
+<kw name="Criar Nova Conta">
+<msg time="2026-10-23T12:19:29.090814" level="FAIL">No keyword with name 'Criar Nova Conta' found.</msg>
+<status status="FAIL" start="2026-10-23T12:19:29.090441" elapsed="0.000699">No keyword with name 'Criar Nova Conta' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>07_cadastro_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.094106" elapsed="0.001433"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:29.099155" elapsed="0.000981"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:19:29.096763" elapsed="0.003556"/>
+</kw>
+<msg time="2026-10-23T12:19:31.061960" level="INFO">Starting Browser process C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:60083</msg>
+<tag>cadastro</tag>
+<status status="FAIL" start="2026-10-23T12:19:29.049616" elapsed="0.051369">No keyword with name 'Criar Nova Conta' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:19:28.369356" elapsed="5.219881"/>
+</suite>
+<suite id="s1-s2" name="CT 010 CadastrarCartao" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_010_CadastrarCartao.robot">
+<test id="s1-s2-t1" name="Adicionar Produto ao Carrinho" line="12">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.631587" elapsed="0.000524"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.633334" elapsed="0.000284"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:19:33.632879" elapsed="0.000815"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:19:33.634087" elapsed="0.000194"/>
+</return>
+<status status="PASS" start="2026-10-23T12:19:33.633845" elapsed="0.000522"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:19:33.633816" elapsed="0.000610"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:19:33.632592" elapsed="0.001875"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:19:33.632266" elapsed="0.002275"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:19:33.634631" elapsed="0.000184"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:19:33.631046" elapsed="0.003874"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.635456" elapsed="0.000882"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.635053" elapsed="0.001393"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.636985" elapsed="0.000747"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.636507" elapsed="0.001328"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:19:33.635028" elapsed="0.002864"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.638081" elapsed="0.000563"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.639042" elapsed="0.000578"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.639836" elapsed="0.000575"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.640713" elapsed="0.000514"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.630128" elapsed="0.011305"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.643236" elapsed="0.001276"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.644878" elapsed="0.000892"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.646079" elapsed="0.000878"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.647306" elapsed="0.000533"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.642233" elapsed="0.005719"/>
+</kw>
+<kw name="Ir Para Login" owner="LoginPage">
+<kw name="Log" owner="BuiltIn">
+<arg>Navegando para a página de login</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.649071" elapsed="0.000545"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${SELECTOR_SIGNUP_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.649862" elapsed="0.000653"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Página de login carregada</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.650837" elapsed="0.000517"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.648385" elapsed="0.003075"/>
+</kw>
+<kw name="Cadastrar Nova Conta">
+<msg time="2026-10-23T12:19:33.654885" level="FAIL">No keyword with name 'Cadastrar Nova Conta' found.</msg>
+<status status="FAIL" start="2026-10-23T12:19:33.654541" elapsed="0.000438">No keyword with name 'Cadastrar Nova Conta' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_cadastro_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.655444" elapsed="0.000743"/>
+</kw>
+<kw name="Pesquisar Produto" owner="Produto">
+<kw name="Clica na aba Produtos" owner="ProdutoPage">
+<kw name="Log" owner="BuiltIn">
+<arg>Clicando na aba de produtos</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.657872" elapsed="0.000582"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>xpath=//a[contains(text(), "Products")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.658852" elapsed="0.001039"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.660441" elapsed="0.001139"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Página de produtos carregada</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.661968" elapsed="0.000680"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.657297" elapsed="0.005488"/>
+</kw>
+<kw name="Preencher Busca" owner="ProdutoPage">
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@id="search_product"]</arg>
+<arg>${produto}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.663753" elapsed="0.000762"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Campo de busca preenchido com: ${produto}</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.664851" elapsed="0.000568"/>
+</kw>
+<arg>${produto}</arg>
+<status status="PASS" start="2026-10-23T12:19:33.663053" elapsed="0.002483"/>
+</kw>
+<kw name="Submeter Busca" owner="ProdutoPage">
+<kw name="Click" owner="Browser">
+<arg>xpath=//button[@id="submit_search"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.666385" elapsed="0.000664"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Botão de busca clicado</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.667296" elapsed="0.000464"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.665785" elapsed="0.002085"/>
+</kw>
+<kw name="Validar Busca Sucesso" owner="ProdutoPage">
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//h2[contains(text(), "Searched Products")]</arg>
+<arg>visible</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.668571" elapsed="0.000527"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Busca realizada com sucesso!</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.669319" elapsed="0.000369"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.668096" elapsed="0.001664"/>
+</kw>
+<arg>${PRODUTO_BUSCA}</arg>
+<doc>Pesquisa um produto e valida a lista de resultados.</doc>
+<status status="PASS" start="2026-10-23T12:19:33.656663" elapsed="0.013139"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>05_busca_produto_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.670207" elapsed="0.000640"/>
+</kw>
+<kw name="Adicionar Produto Pesquisado ao Carrinho" owner="Produto">
+<kw name="Clicar no Produto" owner="ProdutoPage">
+<kw name="Click" owner="Browser">
+<arg>xpath=//a[contains(text(), "View Product")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.672486" elapsed="0.000605"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Clicando no produto encontrado</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.673312" elapsed="0.000387"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.671895" elapsed="0.001877"/>
+</kw>
+<kw name="Adicinar quantidade" owner="ProdutoPage">
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//input[@id="quantity"]</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.674391" elapsed="0.000909"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@id="quantity"]</arg>
+<arg>2</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.675519" elapsed="0.000794"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Quantidade do produto preenchida com: 2</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.676908" elapsed="0.001111"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.673922" elapsed="0.004256"/>
+</kw>
+<kw name="Adicionar ao Carrinho" owner="ProdutoPage">
+<kw name="Click" owner="Browser">
+<arg>xpath=//button[@class="btn btn-default cart"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.679031" elapsed="0.000638"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Botão de adicionar ao carrinho clicado</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.679883" elapsed="0.000423"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.678482" elapsed="0.001902"/>
+</kw>
+<kw name="Checar nome do modal" owner="ProdutoPage">
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//div[@id="cartModal"]</arg>
+<arg>visible</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.680970" elapsed="0.000503"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Modal de produto visível</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.681671" elapsed="0.000349"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//div[@id="cartModal"]//h4[contains(text(), "Added!")]</arg>
+<arg>visible</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.682207" elapsed="0.000457"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Produto adicionado ao carrinho com sucesso!</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.682858" elapsed="0.000348"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>xpath=//button[contains(text(), "Continue Shopping")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.683350" elapsed="0.002188"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Fechando modal de produto</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.685776" elapsed="0.000414"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.680550" elapsed="0.005717"/>
+</kw>
+<kw name="Validar Produto no Carrinho" owner="ProdutoPage">
+<kw name="Click" owner="Browser">
+<arg>xpath=//a[contains(text(), "Cart")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.687023" elapsed="0.000700"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegando para a aba do carrinho</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.688085" elapsed="0.000575"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.688879" elapsed="0.000463"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<arg>==</arg>
+<arg>${URL_BASE}/view_cart</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.689542" elapsed="0.000582"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//table[@id="cart_info_table"]</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.690304" elapsed="0.000513"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Tabela do carrinho visível</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.691045" elapsed="0.000427"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//table[@id="cart_info_table"]//tr[.//a[contains(normalize-space(.), "${PRODUTO_BUSCA}")]]</arg>
+<arg>visible</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.691811" elapsed="0.001058"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${qtd}</var>
+<arg>xpath=//table[@id="cart_info_table"]//tr[.//a[contains(normalize-space(.), "${PRODUTO_BUSCA}")]]//button[contains(@class, "disabled")]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.693419" elapsed="0.001238"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${qtd}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.694996" elapsed="0.000593"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<var>${qtd_numero}</var>
+<arg>${qtd}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.695850" elapsed="0.000461"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${qtd_numero} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.696549" elapsed="0.000443"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Produto adicionado ao carrinho com quantidade: ${qtd}</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.697273" elapsed="0.000422"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.686454" elapsed="0.011315"/>
+</kw>
+<doc>Adiciona o primeiro resultado ao carrinho e valida o conteúdo.</doc>
+<status status="PASS" start="2026-10-23T12:19:33.671360" elapsed="0.026451"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>08_carrinho_com_produto</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.698326" elapsed="0.000761"/>
+</kw>
+<kw name="Fazer checkout" owner="PagamentoPage">
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//a[contains(text(), "Proceed To Checkout")]</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.700102" elapsed="0.000539"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>xpath=//a[contains(text(), "Proceed To Checkout")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.700798" elapsed="0.000462"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//h2[contains(text(), "Address Details")]</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.701429" elapsed="0.000477"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Página de checkout carregada com sucesso!</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.702094" elapsed="0.000592"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.699652" elapsed="0.003154"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>09_checkout</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.703320" elapsed="0.000933"/>
+</kw>
+<kw name="Finalizar Compra" owner="PagamentoPage">
+<kw name="Click" owner="Browser">
+<arg>xpath=//a[contains(text(), "Place Order")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.705363" elapsed="0.000750"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//h2[contains(text(), "Payment")]</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.706451" elapsed="0.000904"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Página de pagamento carregada com sucesso!</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.707778" elapsed="0.001708"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.704711" elapsed="0.004994"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>10_pagina_pagamento</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.712117" elapsed="0.001085"/>
+</kw>
+<kw name="Gerar Dados do Cartão" owner="cartao">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${numero_cartao}</var>
+<arg>4111 1111 1111 1111</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.714856" elapsed="0.000588"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${NUMERO_CARTAO}</arg>
+<arg>${numero_cartao}</arg>
+<doc>Makes the variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.715741" elapsed="0.000633"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<var>${nome_cartao}</var>
+<arg>10</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired `length` from the given `chars`.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.716975" elapsed="0.000386"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${nome_cartao_formatado}</var>
+<arg>TESTE-${nome_cartao}</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.717598" elapsed="0.000542"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${NOME_CARTAO}</arg>
+<arg>${nome_cartao_formatado}</arg>
+<doc>Makes the variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.718446" elapsed="0.000492"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<var>${cvc_cartao}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired `length` from the given `chars`.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.719158" elapsed="0.000293"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${CVC_CARTAO}</arg>
+<arg>${cvc_cartao}</arg>
+<doc>Makes the variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.719773" elapsed="0.000553"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${mes_expiracao}</var>
+<arg>str(random.randint(1, 12)).zfill(2)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.720598" elapsed="0.000632"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${MES_EXPIRACAO_CARTAO}</arg>
+<arg>${mes_expiracao}</arg>
+<doc>Makes the variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.721499" elapsed="0.000523"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${ano_expiracao}</var>
+<arg>str(datetime.datetime.now().year + random.randint(2, 5))</arg>
+<arg>modules=datetime,random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.722291" elapsed="0.000550"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${ANO_EXPIRACAO_CARTAO}</arg>
+<arg>${ano_expiracao}</arg>
+<doc>Makes the variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.723105" elapsed="0.000594"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Dados do cartão gerados: ${NUMERO_CARTAO}, ${NOME_CARTAO}, ${CVC_CARTAO}, ${MES_EXPIRACAO_CARTAO}, ${ANO_EXPIRACAO_CARTAO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.723988" elapsed="0.000774"/>
+</kw>
+<doc>Gera dados sintéticos para o formulário de cartão de teste.</doc>
+<status status="PASS" start="2026-10-23T12:19:33.713875" elapsed="0.011006"/>
+</kw>
+<kw name="Cadastrar Cartão" owner="cartao">
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@name="name_on_card"]</arg>
+<arg>${NOME_CARTAO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.726386" elapsed="0.001391"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@name="card_number"]</arg>
+<arg>${NUMERO_CARTAO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.728139" elapsed="0.000800"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@name="cvc"]</arg>
+<arg>${CVC_CARTAO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.729208" elapsed="0.000642"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@name="expiry_month"]</arg>
+<arg>${MES_EXPIRACAO_CARTAO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.730090" elapsed="0.000665"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@name="expiry_year"]</arg>
+<arg>${ANO_EXPIRACAO_CARTAO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.731005" elapsed="0.000637"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Dados do cartão preenchidos com sucesso!</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.731941" elapsed="0.000546"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.725462" elapsed="0.007145"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>11_cadastro_cartao</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.733457" elapsed="0.000903"/>
+</kw>
+<kw name="Validar Compra Sucesso" owner="PagamentoPage">
+<kw name="Click" owner="Browser">
+<arg>xpath=//button[@id="submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.735890" elapsed="0.000887"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>URL</arg>
+<arg>contains</arg>
+<arg>/payment_done/</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.737178" elapsed="0.001028"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//p[contains(., "Congratulations! Your order has been confirmed!")]</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.738535" elapsed="0.001020"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>xpath=//h2[@data-qa="order-placed" and normalize-space(.)="Order Placed!"]</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.740032" elapsed="0.001503"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Pedido finalizado com sucesso!</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.742003" elapsed="0.000886"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:19:33.735003" elapsed="0.008080"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>12_compra_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.744351" elapsed="0.001101"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:19:33.747125" elapsed="0.000869"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:19:33.746164" elapsed="0.001931"/>
+</kw>
+<tag>carrinho</tag>
+<status status="FAIL" start="2026-10-23T12:19:33.625479" elapsed="0.122933">No keyword with name 'Cadastrar Nova Conta' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:19:33.597191" elapsed="0.160367"/>
+</suite>
+<status status="FAIL" start="2026-10-23T12:19:28.288634" elapsed="5.492672"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">cadastro</stat>
+<stat pass="0" fail="1" skip="0">carrinho</stat>
+</tag>
+<suite>
+<stat name="CT 001 CadastrodeCliente &amp; CT 010 CadastrarCartao" id="s1" pass="0" fail="2" skip="0">CT 001 CadastrodeCliente &amp; CT 010 CadastrarCartao</stat>
+<stat name="CT 001 CadastrodeCliente" id="s1-s1" pass="0" fail="1" skip="0">CT 001 CadastrodeCliente &amp; CT 010 CadastrarCartao.CT 001 CadastrodeCliente</stat>
+<stat name="CT 010 CadastrarCartao" id="s1-s2" pass="0" fail="1" skip="0">CT 001 CadastrodeCliente &amp; CT 010 CadastrarCartao.CT 010 CadastrarCartao</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-10-23T12:19:28.998295" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'keywords\Cadastro.resource' does not exist.</msg>
+<msg time="2026-10-23T12:19:33.610409" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'keywords\Cadastro.resource' does not exist.</msg>
+</errors>
+</robot>

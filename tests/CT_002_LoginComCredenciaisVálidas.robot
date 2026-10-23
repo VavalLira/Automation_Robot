@@ -14,15 +14,7 @@ Criar Conta e Fazer Login
     Verificar homepage
     Ir Para Login
     Take Screenshot   01_login
-    Criar Conta
-    Take Screenshot   02_cadastro
-    Preencher Dados da Conta
-    Take Screenshot   03_dados_conta
-    Preencher Endereco
-    Take Screenshot   04_endereco
-    Submeter Cadastro
-    Take Screenshot   05_cadastro_submetido
-    Validar Cadastro Sucesso
+    Criar Nova Conta 
     Take Screenshot   06_cadastro_sucesso
     
     # Fazer logout

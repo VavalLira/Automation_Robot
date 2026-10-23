@@ -40,11 +40,12 @@ ${nome}                          ${EMPTY}
 ${email}                         ${EMPTY}
 ${senha}                         ${EMPTY}   
 
-${NOME_CARTAO}                   Vicente Campos
-${NUMERO_CARTAO}                 5319 6593 5182 6003
-${CVC_CARTAO}                    879   
-${MES_EXPIRACAO_CARTAO}          01
-${ANO_EXPIRACAO_CARTAO}          2027
+# Dados gerados por data/cartao.resource antes do preenchimento do formulário.
+${NOME_CARTAO}                   ${EMPTY}
+${NUMERO_CARTAO}                 ${EMPTY}
+${CVC_CARTAO}                    ${EMPTY}
+${MES_EXPIRACAO_CARTAO}          ${EMPTY}
+${ANO_EXPIRACAO_CARTAO}          ${EMPTY}
 
 ${SELECTOR_EXCLUIR_CONTA}          text=Delete Account
 ${MSG_ACCOUNT_DELETED}             Account Deleted!

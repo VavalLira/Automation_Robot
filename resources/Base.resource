@@ -3,11 +3,10 @@ Library    Browser
 Library    OperatingSystem
 
 
-Resource    ./pages/Login.resource
-Resource    ./pages/Cadastro.resource
+Resource    ./pages/LoginPage.resource
+Resource    ./keywords/Produto.resource
 Resource    ../data/variables.robot
-Resource    ./pages/Produto.resource
-Resource    ./pages/Pagamento.resource
+Resource    ./keywords/Cadastro.resource
 
 
 

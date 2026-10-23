@@ -1,0 +1,2464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.14.0 on win32)" generated="2026-10-23T12:34:30.746691" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests">
+<suite id="s1-s1" name="CT 001 CadastrodeCliente" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_001_CadastrodeCliente.robot">
+<test id="s1-s1-t1" name="Novo Cadrastro" line="13">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.702992" elapsed="0.001589"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.708084" elapsed="0.000985"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:31.706809" elapsed="0.002488"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:31.709932" elapsed="0.000301"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:31.709541" elapsed="0.000840"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:31.709485" elapsed="0.000984"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:31.706048" elapsed="0.004472"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:31.705179" elapsed="0.005455"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:31.710780" elapsed="0.000285"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:31.700712" elapsed="0.010514"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.712002" elapsed="0.001817"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:31.711416" elapsed="0.002576"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.714791" elapsed="0.001443"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:31.714140" elapsed="0.002264"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:31.711381" elapsed="0.005134"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.716846" elapsed="0.000904"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.718271" elapsed="0.001317"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.720238" elapsed="0.001351"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.722037" elapsed="0.000913"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:31.699456" elapsed="0.023658"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.724794" elapsed="0.000612"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.725664" elapsed="0.000726"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.726678" elapsed="0.001237"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.728341" elapsed="0.000809"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:31.724021" elapsed="0.005265"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>00_homepage</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.730849" elapsed="0.001455"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:31.740077" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:31.739498" elapsed="0.000743">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_login</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.741172" elapsed="0.001113"/>
+</kw>
+<kw name="Criar Nova Conta">
+<msg time="2026-10-23T12:34:31.746802" level="FAIL">No keyword with name 'Criar Nova Conta' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:31.746396" elapsed="0.000539">No keyword with name 'Criar Nova Conta' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>07_cadastro_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.748021" elapsed="0.001174"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:31.751026" elapsed="0.001155"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:31.750033" elapsed="0.002272"/>
+</kw>
+<msg time="2026-10-23T12:34:34.339076" level="INFO">Starting Browser process C:\Users\valeria.lira.d.silva\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:60885</msg>
+<tag>cadastro</tag>
+<status status="FAIL" start="2026-10-23T12:34:31.693015" elapsed="0.060900">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Criar Nova Conta' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:30.883709" elapsed="6.197834"/>
+</suite>
+<suite id="s1-s2" name="CT 002 LoginComCredenciaisVálidas" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_002_LoginComCredenciaisVálidas.robot">
+<test id="s1-s2-t1" name="Criar Conta e Fazer Login" line="12">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.114571" elapsed="0.000594"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.116858" elapsed="0.000345"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.116204" elapsed="0.001095"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.117697" elapsed="0.000389"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.117456" elapsed="0.000745"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.117426" elapsed="0.000834"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.115827" elapsed="0.002478"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.115345" elapsed="0.003058"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.118499" elapsed="0.000208"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.113935" elapsed="0.004864"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.119585" elapsed="0.000970"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.118993" elapsed="0.001687"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.121166" elapsed="0.000579"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.120754" elapsed="0.001064"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.118966" elapsed="0.002894"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.122003" elapsed="0.000583"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.122927" elapsed="0.000669"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.123836" elapsed="0.000992"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.125187" elapsed="0.000641"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.113040" elapsed="0.012929"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.127394" elapsed="0.000745"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.128437" elapsed="0.000796"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.129553" elapsed="0.000835"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.130718" elapsed="0.000545"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.126707" elapsed="0.004681"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.133949" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.133645" elapsed="0.000397">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_login</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.134511" elapsed="0.000710"/>
+</kw>
+<kw name="Criar Nova Conta">
+<msg time="2026-10-23T12:34:37.138582" level="FAIL">No keyword with name 'Criar Nova Conta' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.138119" elapsed="0.000575">No keyword with name 'Criar Nova Conta' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>06_cadastro_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.139240" elapsed="0.000868"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${SELECTOR_LOGOUT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.140546" elapsed="0.000596"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.143388" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.143139" elapsed="0.000312">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Preencher Login">
+<msg time="2026-10-23T12:34:37.145475" level="FAIL">No keyword with name 'Preencher Login' found.</msg>
+<arg>${email}</arg>
+<arg>${senha}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.145208" elapsed="0.000327">No keyword with name 'Preencher Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>07_login_preenchido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.145972" elapsed="0.001183"/>
+</kw>
+<kw name="Submeter Login">
+<msg time="2026-10-23T12:34:37.149199" level="FAIL">No keyword with name 'Submeter Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.148934" elapsed="0.000330">No keyword with name 'Submeter Login' found.</status>
+</kw>
+<kw name="Validar Login Sucesso">
+<msg time="2026-10-23T12:34:37.151390" level="FAIL">No keyword with name 'Validar Login Sucesso' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.151149" elapsed="0.000302">No keyword with name 'Validar Login Sucesso' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>08_login_Valido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.151819" elapsed="0.000915"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.153817" elapsed="0.000528"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.153240" elapsed="0.001166"/>
+</kw>
+<tag>cadastro</tag>
+<tag>login</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.109092" elapsed="0.045497">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Criar Nova Conta' found.
+
+3) No keyword with name 'Ir Para Login' found.
+
+4) No keyword with name 'Preencher Login' found.
+
+5) No keyword with name 'Submeter Login' found.
+
+6) No keyword with name 'Validar Login Sucesso' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.090471" elapsed="0.070832"/>
+</suite>
+<suite id="s1-s3" name="CT 003 LoginComCredenciaisInválida" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_003_LoginComCredenciaisInválida.robot">
+<test id="s1-s3-t1" name="Login Inválido" line="11">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.186195" elapsed="0.000554"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.188569" elapsed="0.000454"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.187732" elapsed="0.001397"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.189553" elapsed="0.000211"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.189300" elapsed="0.000560"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.189265" elapsed="0.000660"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.187363" elapsed="0.002605"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.186915" elapsed="0.003127"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.190151" elapsed="0.000200"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.185701" elapsed="0.004741"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.190992" elapsed="0.000976"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.190573" elapsed="0.001529"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.192610" elapsed="0.000651"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.192173" elapsed="0.001161"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.190550" elapsed="0.002828"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.193508" elapsed="0.000462"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.194248" elapsed="0.000547"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.195063" elapsed="0.000673"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.196004" elapsed="0.000504"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.184880" elapsed="0.011728"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.197620" elapsed="0.000520"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.198365" elapsed="0.000711"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.199308" elapsed="0.000804"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.200431" elapsed="0.000526"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.197012" elapsed="0.004052"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.204150" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.203745" elapsed="0.000574">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Preencher Login">
+<msg time="2026-10-23T12:34:37.221025" level="FAIL">No keyword with name 'Preencher Login' found.</msg>
+<arg>${EMAIL_TESTE_INVALIDO}</arg>
+<arg>${SENHA_TESTE_INVALIDO}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.220282" elapsed="0.000864">No keyword with name 'Preencher Login' found.</status>
+</kw>
+<kw name="Submeter Login">
+<msg time="2026-10-23T12:34:37.226941" level="FAIL">No keyword with name 'Submeter Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.226489" elapsed="0.000555">No keyword with name 'Submeter Login' found.</status>
+</kw>
+<kw name="Validar Login Invalido">
+<msg time="2026-10-23T12:34:37.231100" level="FAIL">No keyword with name 'Validar Login Invalido' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.230742" elapsed="0.000461">No keyword with name 'Validar Login Invalido' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>02_login_Invalido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.231865" elapsed="0.000847"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.234214" elapsed="0.000766"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.233297" elapsed="0.001789"/>
+</kw>
+<tag>login</tag>
+<tag>negative</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.181245" elapsed="0.054287">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Preencher Login' found.
+
+3) No keyword with name 'Submeter Login' found.
+
+4) No keyword with name 'Validar Login Invalido' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.166671" elapsed="0.076698"/>
+</suite>
+<suite id="s1-s4" name="CT 004 CadastroComEmailExistente" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_004_CadastroComEmailExistente.robot">
+<test id="s1-s4-t1" name="Cadastro com Email Existente" line="14">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.271280" elapsed="0.000564"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.273505" elapsed="0.000353"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.272885" elapsed="0.001057"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.274274" elapsed="0.000177"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.274058" elapsed="0.000470"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.274033" elapsed="0.000560"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.272487" elapsed="0.002151"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.272005" elapsed="0.002704"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.274819" elapsed="0.000261"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.270612" elapsed="0.004591"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.275870" elapsed="0.001002"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.275364" elapsed="0.001633"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.277559" elapsed="0.000910"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.277086" elapsed="0.001521"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.275334" elapsed="0.003347"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.278910" elapsed="0.000826"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.280165" elapsed="0.000728"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.281152" elapsed="0.000617"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.282061" elapsed="0.000519"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.269702" elapsed="0.012998"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.283841" elapsed="0.000596"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.284690" elapsed="0.000687"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.285639" elapsed="0.000882"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.287041" elapsed="0.000699"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.283138" elapsed="0.004746"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.291133" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.290703" elapsed="0.000522">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_pagina_login</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.291847" elapsed="0.000934"/>
+</kw>
+<kw name="Tentar criar conta com email já cadastrado">
+<msg time="2026-10-23T12:34:37.295815" level="FAIL">No keyword with name 'Tentar criar conta com email já cadastrado' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.295382" elapsed="0.000518">No keyword with name 'Tentar criar conta com email já cadastrado' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>02_cadastro_email_existente</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.296442" elapsed="0.000874"/>
+</kw>
+<kw name="Validar mensagem de erro">
+<msg time="2026-10-23T12:34:37.300258" level="FAIL">No keyword with name 'Validar mensagem de erro' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.299835" elapsed="0.000514">No keyword with name 'Validar mensagem de erro' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>03_email_existente</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.300803" elapsed="0.000831"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.303028" elapsed="0.001271"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.302273" elapsed="0.002165"/>
+</kw>
+<tag>cadastro</tag>
+<tag>negative</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.266582" elapsed="0.040190">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Tentar criar conta com email já cadastrado' found.
+
+3) No keyword with name 'Validar mensagem de erro' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.249585" elapsed="0.074072"/>
+</suite>
+<suite id="s1-s5" name="CT 005 BuscaDeProduto" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_005_BuscaDeProduto.robot">
+<test id="s1-s5-t1" name="Busca de Produto" line="12">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.352454" elapsed="0.000611"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.354741" elapsed="0.000336"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.354071" elapsed="0.001090"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.355525" elapsed="0.000188"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.355278" elapsed="0.000504"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.355252" elapsed="0.000570"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.353678" elapsed="0.002183"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.353242" elapsed="0.002670"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.356001" elapsed="0.000185"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.351814" elapsed="0.004443"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.356640" elapsed="0.000633"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.356347" elapsed="0.001003"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.357757" elapsed="0.001019"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.357395" elapsed="0.001577"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.356332" elapsed="0.002718"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.359260" elapsed="0.000874"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.360603" elapsed="0.000801"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.361689" elapsed="0.000845"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.362881" elapsed="0.000606"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.350878" elapsed="0.012754"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.364730" elapsed="0.000421"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.365333" elapsed="0.000618"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.366138" elapsed="0.000614"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.367010" elapsed="0.000447"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.364099" elapsed="0.003461"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.370828" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.370489" elapsed="0.000442">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Preencher Login">
+<msg time="2026-10-23T12:34:37.374089" level="FAIL">No keyword with name 'Preencher Login' found.</msg>
+<arg>${email}</arg>
+<arg>${senha}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.373736" elapsed="0.000492">No keyword with name 'Preencher Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_login_Preenchido.png</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.374781" elapsed="0.000995"/>
+</kw>
+<kw name="Submeter Login">
+<msg time="2026-10-23T12:34:37.378706" level="FAIL">No keyword with name 'Submeter Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.378220" elapsed="0.000592">No keyword with name 'Submeter Login' found.</status>
+</kw>
+<kw name="Validar Login Sucesso">
+<msg time="2026-10-23T12:34:37.381861" level="FAIL">No keyword with name 'Validar Login Sucesso' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.381573" elapsed="0.000356">No keyword with name 'Validar Login Sucesso' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>02_login_Valido.png</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.382446" elapsed="0.000697"/>
+</kw>
+<kw name="Pesquisar Produto">
+<msg time="2026-10-23T12:34:37.386405" level="FAIL">No keyword with name 'Pesquisar Produto' found.</msg>
+<arg>${PRODUTO_BUSCA}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.386009" elapsed="0.000550">No keyword with name 'Pesquisar Produto' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>05_busca_produto_sucesso.png</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.387636" elapsed="0.000835"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.389905" elapsed="0.000599"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.388994" elapsed="0.001587"/>
+</kw>
+<tag>busca</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.347562" elapsed="0.043259">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Preencher Login' found.
+
+3) No keyword with name 'Submeter Login' found.
+
+4) No keyword with name 'Validar Login Sucesso' found.
+
+5) No keyword with name 'Pesquisar Produto' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.330217" elapsed="0.065850"/>
+</suite>
+<suite id="s1-s6" name="CT 006 AdicionarAoCarrinho" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_006_AdicionarAoCarrinho.robot">
+<test id="s1-s6-t1" name="Adicionar Produto ao Carrinho" line="11">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.425674" elapsed="0.000566"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.427789" elapsed="0.000475"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.427142" elapsed="0.001240"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.428836" elapsed="0.000197"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.428543" elapsed="0.000580"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.428511" elapsed="0.000671"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.426779" elapsed="0.002447"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.426403" elapsed="0.002895"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.429390" elapsed="0.000184"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.425104" elapsed="0.004561"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.430253" elapsed="0.001059"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.429803" elapsed="0.001649"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.432065" elapsed="0.000924"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.431527" elapsed="0.001623"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.429775" elapsed="0.003442"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.433421" elapsed="0.000744"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.434612" elapsed="0.000741"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.435592" elapsed="0.000630"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.436529" elapsed="0.000736"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.424173" elapsed="0.013243"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.439107" elapsed="0.000644"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.440012" elapsed="0.000789"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.441106" elapsed="0.000886"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.442370" elapsed="0.000603"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.438244" elapsed="0.004853"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.446317" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.445994" elapsed="0.000423">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Preencher Login">
+<msg time="2026-10-23T12:34:37.449884" level="FAIL">No keyword with name 'Preencher Login' found.</msg>
+<arg>${email}</arg>
+<arg>${senha}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.449467" elapsed="0.000527">No keyword with name 'Preencher Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_login_Preenchido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.450557" elapsed="0.000839"/>
+</kw>
+<kw name="Submeter Login">
+<msg time="2026-10-23T12:34:37.455032" level="FAIL">No keyword with name 'Submeter Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.454669" elapsed="0.000463">No keyword with name 'Submeter Login' found.</status>
+</kw>
+<kw name="Validar Login Sucesso">
+<msg time="2026-10-23T12:34:37.459000" level="FAIL">No keyword with name 'Validar Login Sucesso' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.458601" elapsed="0.000507">No keyword with name 'Validar Login Sucesso' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>02_login_Valido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.459718" elapsed="0.000761"/>
+</kw>
+<kw name="Pesquisar Produto">
+<msg time="2026-10-23T12:34:37.464305" level="FAIL">No keyword with name 'Pesquisar Produto' found.</msg>
+<arg>${PRODUTO_BUSCA}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.463953" elapsed="0.000451">No keyword with name 'Pesquisar Produto' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>05_busca_produto_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.465119" elapsed="0.000968"/>
+</kw>
+<kw name="Adicionar Produto Pesquisado ao Carrinho">
+<msg time="2026-10-23T12:34:37.467847" level="FAIL">No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.467610" elapsed="0.000299">No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>08_carrinho_com_produto</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.468285" elapsed="0.000611"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.470211" elapsed="0.000741"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.469372" elapsed="0.001701"/>
+</kw>
+<tag>carrinho</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.420385" elapsed="0.050990">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Preencher Login' found.
+
+3) No keyword with name 'Submeter Login' found.
+
+4) No keyword with name 'Validar Login Sucesso' found.
+
+5) No keyword with name 'Pesquisar Produto' found.
+
+6) No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.401528" elapsed="0.075920"/>
+</suite>
+<suite id="s1-s7" name="CT 007 VerificarDetalhesProduto" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_007_VerificarDetalhesProduto.robot">
+<test id="s1-s7-t1" name="Verificar Detalhes Completos do Produto" line="12">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.505310" elapsed="0.000409"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.506833" elapsed="0.000269"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.506396" elapsed="0.000775"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.507472" elapsed="0.000146"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.507272" elapsed="0.000405"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.507251" elapsed="0.000465"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.506125" elapsed="0.001618"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.505829" elapsed="0.001959"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.507851" elapsed="0.000187"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.504860" elapsed="0.003355"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.508882" elapsed="0.001018"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.508384" elapsed="0.001641"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.510613" elapsed="0.000859"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.510101" elapsed="0.001489"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.508355" elapsed="0.003305"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.511854" elapsed="0.000550"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.512664" elapsed="0.000472"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.513331" elapsed="0.000413"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.513945" elapsed="0.000361"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.503876" elapsed="0.010504"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.515246" elapsed="0.000363"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.515752" elapsed="0.000437"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.516364" elapsed="0.000704"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.517298" elapsed="0.000401"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.514781" elapsed="0.002999"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_homepage</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.518212" elapsed="0.000682"/>
+</kw>
+<kw name="Clica na aba Produtos">
+<msg time="2026-10-23T12:34:37.522458" level="FAIL">No keyword with name 'Clica na aba Produtos' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.522106" elapsed="0.000435">No keyword with name 'Clica na aba Produtos' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>02_pagina_produtos</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.523036" elapsed="0.000615"/>
+</kw>
+<kw name="Validar Pagina de Produtos">
+<msg time="2026-10-23T12:34:37.526128" level="FAIL">No keyword with name 'Validar Pagina de Produtos' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.525814" elapsed="0.000410">No keyword with name 'Validar Pagina de Produtos' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>03_produtos_listados</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.526739" elapsed="0.000836"/>
+</kw>
+<kw name="Clicar no Primeiro Produto">
+<msg time="2026-10-23T12:34:37.531177" level="FAIL">No keyword with name 'Clicar no Primeiro Produto' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.530842" elapsed="0.000426">No keyword with name 'Clicar no Primeiro Produto' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>04_acessando_produto</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.531793" elapsed="0.000773"/>
+</kw>
+<kw name="Validar Detalhes do Produto">
+<msg time="2026-10-23T12:34:37.535621" level="FAIL">No keyword with name 'Validar Detalhes do Produto' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.535344" elapsed="0.000343">No keyword with name 'Validar Detalhes do Produto' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>05_detalhes_validados</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.536186" elapsed="0.000857"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.538535" elapsed="0.000671"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.537685" elapsed="0.001633"/>
+</kw>
+<tag>detalhes</tag>
+<tag>produto</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.500152" elapsed="0.039525">Several failures occurred:
+
+1) No keyword with name 'Clica na aba Produtos' found.
+
+2) No keyword with name 'Validar Pagina de Produtos' found.
+
+3) No keyword with name 'Clicar no Primeiro Produto' found.
+
+4) No keyword with name 'Validar Detalhes do Produto' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.484644" elapsed="0.060272"/>
+</suite>
+<suite id="s1-s8" name="CT 008 Logout" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_008_Logout.robot">
+<test id="s1-s8-t1" name="Realizar Logout com Sucesso" line="12">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.571970" elapsed="0.000611"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.574319" elapsed="0.000345"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.573593" elapsed="0.001174"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.575125" elapsed="0.000177"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.574907" elapsed="0.000485"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.574882" elapsed="0.000574"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.573183" elapsed="0.002318"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.572765" elapsed="0.002811"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.575671" elapsed="0.000184"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.571308" elapsed="0.004626"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.576349" elapsed="0.000641"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.576037" elapsed="0.001080"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.577509" elapsed="0.000594"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.577167" elapsed="0.001010"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.576018" elapsed="0.002201"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.578339" elapsed="0.000424"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.579011" elapsed="0.000588"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.579825" elapsed="0.000584"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.580634" elapsed="0.000391"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.570311" elapsed="0.010805"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.581963" elapsed="0.000387"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.582539" elapsed="0.000664"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.583381" elapsed="0.000665"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.584253" elapsed="0.000443"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.581494" elapsed="0.003319"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_homepage</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.585265" elapsed="0.000768"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.589618" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.589214" elapsed="0.000489">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>02_pagina_login</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.590264" elapsed="0.000848"/>
+</kw>
+<kw name="Preencher Login">
+<msg time="2026-10-23T12:34:37.593420" level="FAIL">No keyword with name 'Preencher Login' found.</msg>
+<arg>${email}</arg>
+<arg>${senha}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.593165" elapsed="0.000322">No keyword with name 'Preencher Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>03_login_preenchido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.593998" elapsed="0.000636"/>
+</kw>
+<kw name="Submeter Login">
+<msg time="2026-10-23T12:34:37.597762" level="FAIL">No keyword with name 'Submeter Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.597480" elapsed="0.000356">No keyword with name 'Submeter Login' found.</status>
+</kw>
+<kw name="Validar Login Sucesso">
+<msg time="2026-10-23T12:34:37.601137" level="FAIL">No keyword with name 'Validar Login Sucesso' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.600748" elapsed="0.000487">No keyword with name 'Validar Login Sucesso' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>04_login_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.601975" elapsed="0.000833"/>
+</kw>
+<kw name="Realizar Logout">
+<msg time="2026-10-23T12:34:37.606148" level="FAIL">No keyword with name 'Realizar Logout' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.605781" elapsed="0.000460">No keyword with name 'Realizar Logout' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>05_logout_clicado</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.606785" elapsed="0.000644"/>
+</kw>
+<kw name="Validar Logout Sucesso">
+<msg time="2026-10-23T12:34:37.610267" level="FAIL">No keyword with name 'Validar Logout Sucesso' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.609863" elapsed="0.000502">No keyword with name 'Validar Logout Sucesso' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>06_logout_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.610861" elapsed="0.000848"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.613175" elapsed="0.000664"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.612420" elapsed="0.001491"/>
+</kw>
+<tag>login</tag>
+<tag>logout</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.566691" elapsed="0.047470">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Preencher Login' found.
+
+3) No keyword with name 'Submeter Login' found.
+
+4) No keyword with name 'Validar Login Sucesso' found.
+
+5) No keyword with name 'Realizar Logout' found.
+
+6) No keyword with name 'Validar Logout Sucesso' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.549918" elapsed="0.071487"/>
+</suite>
+<suite id="s1-s9" name="CT 009 RemoverProdutosCarrinho" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_009_RemoverProdutosCarrinho.robot">
+<test id="s1-s9-t1" name="Adicionar Produto ao Carrinho" line="11">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.645609" elapsed="0.000400"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.647199" elapsed="0.000269"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.646754" elapsed="0.000784"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.647846" elapsed="0.000137"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.647658" elapsed="0.000388"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.647624" elapsed="0.000463"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.646458" elapsed="0.001659"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.646153" elapsed="0.002014"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.648230" elapsed="0.000156"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.645187" elapsed="0.003265"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.648909" elapsed="0.000808"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.648548" elapsed="0.001255"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.650192" elapsed="0.000544"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.649853" elapsed="0.000958"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.648529" elapsed="0.002324"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.650981" elapsed="0.000439"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.651692" elapsed="0.000494"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.652345" elapsed="0.000408"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.653013" elapsed="0.000391"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.644557" elapsed="0.008938"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.654425" elapsed="0.000377"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.654947" elapsed="0.000454"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.655570" elapsed="0.000561"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.656358" elapsed="0.000368"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.653854" elapsed="0.002944"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.660318" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.659980" elapsed="0.000432">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Preencher Login">
+<msg time="2026-10-23T12:34:37.663888" level="FAIL">No keyword with name 'Preencher Login' found.</msg>
+<arg>${email}</arg>
+<arg>${senha}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.663516" elapsed="0.000481">No keyword with name 'Preencher Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_login_Preenchido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.664569" elapsed="0.000884"/>
+</kw>
+<kw name="Submeter Login">
+<msg time="2026-10-23T12:34:37.669419" level="FAIL">No keyword with name 'Submeter Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.669001" elapsed="0.000531">No keyword with name 'Submeter Login' found.</status>
+</kw>
+<kw name="Validar Login Sucesso">
+<msg time="2026-10-23T12:34:37.672279" level="FAIL">No keyword with name 'Validar Login Sucesso' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.672011" elapsed="0.000337">No keyword with name 'Validar Login Sucesso' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>02_login_Valido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.673014" elapsed="0.000876"/>
+</kw>
+<kw name="Pesquisar Produto">
+<msg time="2026-10-23T12:34:37.676477" level="FAIL">No keyword with name 'Pesquisar Produto' found.</msg>
+<arg>${PRODUTO_BUSCA}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.676200" elapsed="0.000343">No keyword with name 'Pesquisar Produto' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>05_busca_produto_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.677049" elapsed="0.000561"/>
+</kw>
+<kw name="Adicionar Produto Pesquisado ao Carrinho">
+<msg time="2026-10-23T12:34:37.679419" level="FAIL">No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.679161" elapsed="0.000325">No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>08_carrinho_com_produto</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.679937" elapsed="0.000734"/>
+</kw>
+<kw name="Remover Produto do Carrinho">
+<msg time="2026-10-23T12:34:37.682830" level="FAIL">No keyword with name 'Remover Produto do Carrinho' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.682571" elapsed="0.000325">No keyword with name 'Remover Produto do Carrinho' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>09_carrinho_vazio</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.683350" elapsed="0.000562"/>
+</kw>
+<kw name="Verifique se o produto foi removido do carrinho">
+<msg time="2026-10-23T12:34:37.685640" level="FAIL">No keyword with name 'Verifique se o produto foi removido do carrinho' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.685423" elapsed="0.000274">No keyword with name 'Verifique se o produto foi removido do carrinho' found.</status>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.686961" elapsed="0.000551"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.686262" elapsed="0.001315"/>
+</kw>
+<tag>carrinho</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.641334" elapsed="0.046436">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Preencher Login' found.
+
+3) No keyword with name 'Submeter Login' found.
+
+4) No keyword with name 'Validar Login Sucesso' found.
+
+5) No keyword with name 'Pesquisar Produto' found.
+
+6) No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.
+
+7) No keyword with name 'Remover Produto do Carrinho' found.
+
+8) No keyword with name 'Verifique se o produto foi removido do carrinho' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.627224" elapsed="0.066318"/>
+</suite>
+<suite id="s1-s10" name="CT 010 CadastrarCartao" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_010_CadastrarCartao.robot">
+<test id="s1-s10-t1" name="Adicionar Produto ao Carrinho" line="13">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.723243" elapsed="0.000592"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.725437" elapsed="0.000375"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.724733" elapsed="0.001181"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.726342" elapsed="0.000204"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.726076" elapsed="0.000565"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.726044" elapsed="0.000662"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.724383" elapsed="0.002367"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.723994" elapsed="0.002840"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.726934" elapsed="0.000207"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.722664" elapsed="0.004582"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.727821" elapsed="0.001221"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.727385" elapsed="0.001851"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.730019" elapsed="0.000931"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.729344" elapsed="0.001797"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.727360" elapsed="0.003857"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.731372" elapsed="0.000508"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.732153" elapsed="0.000813"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.733217" elapsed="0.000661"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.734192" elapsed="0.000538"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.721742" elapsed="0.013098"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.735889" elapsed="0.000634"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.736794" elapsed="0.000577"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.737562" elapsed="0.000603"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.738377" elapsed="0.000371"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.735248" elapsed="0.003576"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.740847" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.740599" elapsed="0.000310">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Criar Nova Conta">
+<msg time="2026-10-23T12:34:37.743710" level="FAIL">No keyword with name 'Criar Nova Conta' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.743452" elapsed="0.000320">No keyword with name 'Criar Nova Conta' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_cadastro_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.744574" elapsed="0.001006"/>
+</kw>
+<kw name="Pesquisar Produto">
+<msg time="2026-10-23T12:34:37.748210" level="FAIL">No keyword with name 'Pesquisar Produto' found.</msg>
+<arg>${PRODUTO_BUSCA}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.747869" elapsed="0.000440">No keyword with name 'Pesquisar Produto' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>05_busca_produto_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.748817" elapsed="0.000860"/>
+</kw>
+<kw name="Adicionar Produto Pesquisado ao Carrinho">
+<msg time="2026-10-23T12:34:37.751732" level="FAIL">No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.751438" elapsed="0.000362">No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>08_carrinho_com_produto</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.752316" elapsed="0.000829"/>
+</kw>
+<kw name="Fazer checkout">
+<msg time="2026-10-23T12:34:37.756263" level="FAIL">No keyword with name 'Fazer checkout' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.756018" elapsed="0.000312">No keyword with name 'Fazer checkout' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>09_checkout</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.756736" elapsed="0.000741"/>
+</kw>
+<kw name="Finalizar Compra">
+<msg time="2026-10-23T12:34:37.760156" level="FAIL">No keyword with name 'Finalizar Compra' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.759918" elapsed="0.000300">No keyword with name 'Finalizar Compra' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>10_pagina_pagamento</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.760771" elapsed="0.000795"/>
+</kw>
+<kw name="Gerar Dados do Cartão">
+<msg time="2026-10-23T12:34:37.763772" level="FAIL">No keyword with name 'Gerar Dados do Cartão' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.763524" elapsed="0.000316">No keyword with name 'Gerar Dados do Cartão' found.</status>
+</kw>
+<kw name="Cadastrar Cartão">
+<msg time="2026-10-23T12:34:37.767888" level="FAIL">No keyword with name 'Cadastrar Cartão' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.767459" elapsed="0.000514">No keyword with name 'Cadastrar Cartão' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>11_cadastro_cartao</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.768574" elapsed="0.000582"/>
+</kw>
+<kw name="Validar Compra Sucesso">
+<msg time="2026-10-23T12:34:37.773165" level="FAIL">No keyword with name 'Validar Compra Sucesso' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.772846" elapsed="0.000405">No keyword with name 'Validar Compra Sucesso' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>12_compra_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.773808" elapsed="0.000740"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.776070" elapsed="0.000815"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.775198" elapsed="0.001801"/>
+</kw>
+<tag>carrinho</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.717504" elapsed="0.059764">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Criar Nova Conta' found.
+
+3) No keyword with name 'Pesquisar Produto' found.
+
+4) No keyword with name 'Adicionar Produto Pesquisado ao Carrinho' found.
+
+5) No keyword with name 'Fazer checkout' found.
+
+6) No keyword with name 'Finalizar Compra' found.
+
+7) No keyword with name 'Gerar Dados do Cartão' found.
+
+8) No keyword with name 'Cadastrar Cartão' found.
+
+9) No keyword with name 'Validar Compra Sucesso' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.698414" elapsed="0.084476"/>
+</suite>
+<suite id="s1-s11" name="CT 011 ExcluirConta" source="C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_011_ExcluirConta.robot">
+<test id="s1-s11-t1" name="Criar Conta e Fazer Login" line="12">
+<kw name="Abrir Navegador" owner="Base" type="SETUP">
+<kw name="Resolver Executavel Chromium" owner="Base">
+<kw name="Create List" owner="BuiltIn">
+<var>${candidatos}</var>
+<arg>C:/Program Files/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</arg>
+<arg>C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe</arg>
+<arg>C:/Program Files/Microsoft/Edge/Application/msedge.exe</arg>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.805756" elapsed="0.000604"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${caminho}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.808179" elapsed="0.000412"/>
+</kw>
+<var>${existe}</var>
+<arg>File Should Exist</arg>
+<arg>${caminho}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.807423" elapsed="0.001275"/>
+</kw>
+<if>
+<branch type="IF" condition="${existe}">
+<return>
+<value>${caminho}</value>
+<status status="PASS" start="2026-10-23T12:34:37.809073" elapsed="0.000150"/>
+</return>
+<status status="PASS" start="2026-10-23T12:34:37.808848" elapsed="0.000439"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.808824" elapsed="0.000504"/>
+</if>
+<var name="${caminho}"/>
+<status status="PASS" start="2026-10-23T12:34:37.806993" elapsed="0.002364"/>
+</iter>
+<var>${caminho}</var>
+<value>@{candidatos}</value>
+<status status="PASS" start="2026-10-23T12:34:37.806538" elapsed="0.002870"/>
+</for>
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-23T12:34:37.809469" elapsed="0.000136"/>
+</return>
+<var>${executavel_sistema}</var>
+<status status="PASS" start="2026-10-23T12:34:37.805167" elapsed="0.004508"/>
+</kw>
+<if>
+<branch type="IF" condition="$executavel_sistema">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>executablePath=${executavel_sistema}</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.810129" elapsed="0.000677"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.809764" elapsed="0.001124"/>
+</branch>
+<branch type="ELSE">
+<kw name="New Browser" owner="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized", "--kiosk"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.811246" elapsed="0.000523"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.810936" elapsed="0.000954"/>
+</branch>
+<status status="PASS" start="2026-10-23T12:34:37.809748" elapsed="0.002186"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT_PADRAO}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.812052" elapsed="0.000433"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<arg>viewport=${{None}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.812735" elapsed="0.000443"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>${URL_BASE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.813371" elapsed="0.000647"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Navegador aberto em tela cheia</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.814232" elapsed="0.000386"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.804216" elapsed="0.010480"/>
+</kw>
+<kw name="Verificar homepage" owner="Base">
+<kw name="Log" owner="BuiltIn">
+<arg>Verificando se chegou na homepage do Site</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.815703" elapsed="0.000502"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>https://automationexercise.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.816416" elapsed="0.000567"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<arg>Title</arg>
+<arg>matches</arg>
+<arg>Início|Home|Automation Exercise</arg>
+<arg>timeout=180</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.817240" elapsed="0.000794"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Homepage verificada com sucesso</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.818277" elapsed="0.000433"/>
+</kw>
+<status status="PASS" start="2026-10-23T12:34:37.815076" elapsed="0.003743"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.821651" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.821386" elapsed="0.000333">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>01_login</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.822137" elapsed="0.000771"/>
+</kw>
+<kw name="Criar Nova Conta">
+<msg time="2026-10-23T12:34:37.825491" level="FAIL">No keyword with name 'Criar Nova Conta' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.825189" elapsed="0.000400">No keyword with name 'Criar Nova Conta' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>06_cadastro_sucesso</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.826212" elapsed="0.000830"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${SELECTOR_LOGOUT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.827434" elapsed="0.000511"/>
+</kw>
+<kw name="Ir Para Login">
+<msg time="2026-10-23T12:34:37.830137" level="FAIL">No keyword with name 'Ir Para Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.829838" elapsed="0.000389">No keyword with name 'Ir Para Login' found.</status>
+</kw>
+<kw name="Preencher Login">
+<msg time="2026-10-23T12:34:37.836383" level="FAIL">No keyword with name 'Preencher Login' found.</msg>
+<arg>${email}</arg>
+<arg>${senha}</arg>
+<status status="FAIL" start="2026-10-23T12:34:37.835812" elapsed="0.000687">No keyword with name 'Preencher Login' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>07_login_preenchido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.838555" elapsed="0.000794"/>
+</kw>
+<kw name="Submeter Login">
+<msg time="2026-10-23T12:34:37.841870" level="FAIL">No keyword with name 'Submeter Login' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.841575" elapsed="0.000388">No keyword with name 'Submeter Login' found.</status>
+</kw>
+<kw name="Validar Login Sucesso">
+<msg time="2026-10-23T12:34:37.845431" level="FAIL">No keyword with name 'Validar Login Sucesso' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.845138" elapsed="0.000363">No keyword with name 'Validar Login Sucesso' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>08_login_Valido</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.846023" elapsed="0.000844"/>
+</kw>
+<kw name="Clicar no botão de excluir conta">
+<msg time="2026-10-23T12:34:37.849653" level="FAIL">No keyword with name 'Clicar no botão de excluir conta' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.849296" elapsed="0.000430">No keyword with name 'Clicar no botão de excluir conta' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>09_excluir_conta</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.850172" elapsed="0.000682"/>
+</kw>
+<kw name="Validar Conta Excluida">
+<msg time="2026-10-23T12:34:37.853778" level="FAIL">No keyword with name 'Validar Conta Excluida' found.</msg>
+<status status="FAIL" start="2026-10-23T12:34:37.853431" elapsed="0.000447">No keyword with name 'Validar Conta Excluida' found.</status>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<arg>10_conta_excluida</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.854454" elapsed="0.000826"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="NOT RUN" start="2026-10-23T12:34:37.856598" elapsed="0.000559"/>
+</kw>
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-10-23T12:34:37.855936" elapsed="0.001292"/>
+</kw>
+<tag>cadastro</tag>
+<tag>login</tag>
+<status status="FAIL" start="2026-10-23T12:34:37.800624" elapsed="0.056790">Several failures occurred:
+
+1) No keyword with name 'Ir Para Login' found.
+
+2) No keyword with name 'Criar Nova Conta' found.
+
+3) No keyword with name 'Ir Para Login' found.
+
+4) No keyword with name 'Preencher Login' found.
+
+5) No keyword with name 'Submeter Login' found.
+
+6) No keyword with name 'Validar Login Sucesso' found.
+
+7) No keyword with name 'Clicar no botão de excluir conta' found.
+
+8) No keyword with name 'Validar Conta Excluida' found.</status>
+</test>
+<status status="FAIL" start="2026-10-23T12:34:37.787614" elapsed="0.075433"/>
+</suite>
+<status status="FAIL" start="2026-10-23T12:34:30.750201" elapsed="7.118552"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="11" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">busca</stat>
+<stat pass="0" fail="4" skip="0">cadastro</stat>
+<stat pass="0" fail="3" skip="0">carrinho</stat>
+<stat pass="0" fail="1" skip="0">detalhes</stat>
+<stat pass="0" fail="4" skip="0">login</stat>
+<stat pass="0" fail="1" skip="0">logout</stat>
+<stat pass="0" fail="2" skip="0">negative</stat>
+<stat pass="0" fail="1" skip="0">produto</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="0" fail="11" skip="0">Tests</stat>
+<stat name="CT 001 CadastrodeCliente" id="s1-s1" pass="0" fail="1" skip="0">Tests.CT 001 CadastrodeCliente</stat>
+<stat name="CT 002 LoginComCredenciaisVálidas" id="s1-s2" pass="0" fail="1" skip="0">Tests.CT 002 LoginComCredenciaisVálidas</stat>
+<stat name="CT 003 LoginComCredenciaisInválida" id="s1-s3" pass="0" fail="1" skip="0">Tests.CT 003 LoginComCredenciaisInválida</stat>
+<stat name="CT 004 CadastroComEmailExistente" id="s1-s4" pass="0" fail="1" skip="0">Tests.CT 004 CadastroComEmailExistente</stat>
+<stat name="CT 005 BuscaDeProduto" id="s1-s5" pass="0" fail="1" skip="0">Tests.CT 005 BuscaDeProduto</stat>
+<stat name="CT 006 AdicionarAoCarrinho" id="s1-s6" pass="0" fail="1" skip="0">Tests.CT 006 AdicionarAoCarrinho</stat>
+<stat name="CT 007 VerificarDetalhesProduto" id="s1-s7" pass="0" fail="1" skip="0">Tests.CT 007 VerificarDetalhesProduto</stat>
+<stat name="CT 008 Logout" id="s1-s8" pass="0" fail="1" skip="0">Tests.CT 008 Logout</stat>
+<stat name="CT 009 RemoverProdutosCarrinho" id="s1-s9" pass="0" fail="1" skip="0">Tests.CT 009 RemoverProdutosCarrinho</stat>
+<stat name="CT 010 CadastrarCartao" id="s1-s10" pass="0" fail="1" skip="0">Tests.CT 010 CadastrarCartao</stat>
+<stat name="CT 011 ExcluirConta" id="s1-s11" pass="0" fail="1" skip="0">Tests.CT 011 ExcluirConta</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-10-23T12:34:31.677609" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:31.679276" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:31.688012" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.098909" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.100268" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.103197" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.172733" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.174124" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.177071" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.258442" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.260077" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.262776" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.338782" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.340499" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.343542" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.410912" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.412382" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.415960" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.492429" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.493834" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.496987" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.558037" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.559634" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.563065" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.633317" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.634465" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.636859" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.705928" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.707405" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.710766" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.712119" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_010_CadastrarCartao.robot' on line 8: Resource file '..\resources\pages\cartao.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.713450" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\tests\CT_010_CadastrarCartao.robot' on line 9: Resource file '..\resources\pages\PagamentoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.794462" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 6: Resource file 'pages\LoginPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.795680" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 7: Resource file 'pages\ProdutoPage.resource' does not exist.</msg>
+<msg time="2026-10-23T12:34:37.797842" level="ERROR">Error in file 'C:\Users\valeria.lira.d.silva\Documents\Projetos\robot_automacao\Automation-desafio\resources\Base.resource' on line 9: Resource file 'pages\CadastroPage.resource' does not exist.</msg>
+</errors>
+</robot>

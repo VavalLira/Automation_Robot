@@ -5,37 +5,28 @@ Test Setup       Abrir Navegador
 Test Teardown    Run Keyword And Ignore Error    Take Screenshot
 
 Resource    ../resources/Base.resource
+Resource    ../resources/keywords/Cartao.resource
+Resource    ../resources/pages/PagamentoPage.resource
 
 
 *** Test Cases ***
-Adicionar Produto ao Carrinho
-    [Tags]    carrinho
+Finalizar Compra com Cartão de Teste
+     [Documentation]    Cadastra um cartão de teste durante o checkout e valida a compra.
+     [Tags]    cartao
+  
     Verificar homepage
     Ir Para Login
-    Preencher Login    ${email}    ${senha}
-    Take Screenshot   01_login_Preenchido
-    Submeter Login
-    Validar Login Sucesso
-    Take Screenshot   02_login_Valido
-    Clica na aba Produtos
-    Preencher Busca       ${PRODUTO_BUSCA}
-    Take Screenshot   03_busca_produto_preenchida
-    Submeter Busca
-    Take Screenshot  04_busca_produto_submetida
-    Validar Busca Sucesso
+    Criar Nova Conta 
+    Take Screenshot   01_cadastro_sucesso
+    Pesquisar Produto    ${PRODUTO_BUSCA}
     Take Screenshot   05_busca_produto_sucesso
-    Clicar no Produto
-    Take Screenshot   06_detalhes_produto
-    Adicinar quantidade 
-    Adicionar ao Carrinho
-    Take Screenshot   07_produto_adicionado
-    Checar nome do modal
-    Validar Produto no Carrinho
+    Adicionar Produto
     Take Screenshot   08_carrinho_com_produto
     Fazer checkout
     Take Screenshot   09_checkout
     Finalizar Compra
     Take Screenshot   10_pagina_pagamento
+    Gerar Dados do Cartão
     Cadastrar Cartão
     Take Screenshot   11_cadastro_cartao
     Validar Compra Sucesso
